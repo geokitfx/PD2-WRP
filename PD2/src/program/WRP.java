@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Choice;
@@ -11,6 +13,7 @@ import java.awt.BorderLayout;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
 
 public class WRP {
 
@@ -43,6 +46,7 @@ public class WRP {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		// ACSSES ALL J THINGS \\
 		JLabel WeaponCategory = new JLabel("Weapon Category");
 		JLabel WeaponChoice = new JLabel("Weapon Choice");
 		JComboBox WC = new JComboBox();
@@ -56,7 +60,12 @@ public class WRP {
 		JComboBox WCB_SpecialPrimary = new JComboBox();
 		JComboBox WCB_SpecialSecondary = new JComboBox();
 		JComboBox WCB_SubmachineGun = new JComboBox();
-		
+		JButton Change_Weapon_Category = new JButton("Change Weapon Category");
+		JButton Change_Weapon = new JButton("Change Weapon");
+		JLabel WPN_test = new JLabel("Weapon Test");
+		JLabel WPN_Name = new JLabel("Weapon Name:");
+		JLabel ID = new JLabel("ID");
+		// ACSSES ALL J THINGS \\
 		
 		FWRP = new JFrame();
 		FWRP.setFont(new Font("Comic Sans MS", Font.PLAIN, 12));
@@ -66,6 +75,16 @@ public class WRP {
 		FWRP.setBounds(100, 100, 1920, 1080);
 		FWRP.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		FWRP.getContentPane().setLayout(null);
+		
+		ID.setVisible(false);
+		ID.setBounds(10, 120, 46, 14);
+		FWRP.getContentPane().add(ID);
+		
+		WPN_Name.setBounds(10, 98, 201, 22);
+		FWRP.getContentPane().add(WPN_Name);
+		
+		WPN_test.setBounds(100, 98, 201, 22);
+		FWRP.getContentPane().add(WPN_test);
 		
 		WeaponCategory.setBounds(10, 1, 201, 22);
 		FWRP.getContentPane().add(WeaponCategory);
@@ -127,41 +146,281 @@ public class WRP {
 		WCB_SubmachineGun.setMaximumRowCount(25);
 		WCB_SubmachineGun.setBounds(10, 76, 201, 22);
 		FWRP.getContentPane().add(WCB_SubmachineGun);
-		
-		JLabel TEST = new JLabel("TEST==TRUE");
-		TEST.setBounds(114, 116, 264, 14);
-		FWRP.getContentPane().add(TEST);
 		// JCOMBO BOX GROUP
 		
-		if (WC.getItemAt(0).toString().equals("Akimbo") ) {
-			WCB_Akimbo.setVisible(true);
-			WCB_AssaultRifle.setVisible(false);
-			WCB_LightMachineGun.setVisible(false);
-			WCB_Pistol.setVisible(false);
-			WCB_ShotgunPrimary.setVisible(false);
-			WCB_ShotgunSecondary.setVisible(false);
-			WCB_SniperRifle.setVisible(false);
-			WCB_SpecialPrimary.setVisible(false);
-			WCB_SpecialSecondary.setVisible(false);
-			WCB_SubmachineGun.setVisible(false);
-			TEST.setText("INCORRECT");
-		} else if (WC.getItemAt(1).toString().equals("Assault Rifle")) {
-			WCB_Akimbo.setVisible(false);
-			WCB_AssaultRifle.setVisible(true);
-			WCB_LightMachineGun.setVisible(false);
-			WCB_Pistol.setVisible(false);
-			WCB_ShotgunPrimary.setVisible(false);
-			WCB_ShotgunSecondary.setVisible(false);
-			WCB_SniperRifle.setVisible(false);
-			WCB_SpecialPrimary.setVisible(false);
-			WCB_SpecialSecondary.setVisible(false);
-			WCB_SubmachineGun.setVisible(false);
-			TEST.setText("CORRECT");
-		}
+		// JBUTTON GROUP
+		Change_Weapon_Category.setBounds(222, 26, 187, 23);
+		FWRP.getContentPane().add(Change_Weapon_Category);
+		
+		Change_Weapon.setBounds(221, 76, 187, 23);
+		FWRP.getContentPane().add(Change_Weapon);
+		// JBUTTON GROUP
+		
+		Change_Weapon_Category.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (WC.getSelectedItem().toString().contains("Akimbo")) {
+					WCB_Akimbo.setVisible(true);
+					WCB_AssaultRifle.setVisible(false);
+					WCB_LightMachineGun.setVisible(false);
+					WCB_Pistol.setVisible(false);
+					WCB_ShotgunPrimary.setVisible(false);
+					WCB_ShotgunSecondary.setVisible(false);
+					WCB_SniperRifle.setVisible(false);
+					WCB_SpecialPrimary.setVisible(false);
+					WCB_SpecialSecondary.setVisible(false);
+					WCB_SubmachineGun.setVisible(false);
+				} else if (WC.getSelectedItem().toString().contains("Assault Rifle")) {
+					WCB_Akimbo.setVisible(false);
+					WCB_AssaultRifle.setVisible(true);
+					WCB_LightMachineGun.setVisible(false);
+					WCB_Pistol.setVisible(false);
+					WCB_ShotgunPrimary.setVisible(false);
+					WCB_ShotgunSecondary.setVisible(false);
+					WCB_SniperRifle.setVisible(false);
+					WCB_SpecialPrimary.setVisible(false);
+					WCB_SpecialSecondary.setVisible(false);
+					WCB_SubmachineGun.setVisible(false);
+				} else if (WC.getSelectedItem().toString().contains("Light Machine Gun")) {
+					WCB_Akimbo.setVisible(false);
+					WCB_AssaultRifle.setVisible(false);
+					WCB_LightMachineGun.setVisible(true);
+					WCB_Pistol.setVisible(false);
+					WCB_ShotgunPrimary.setVisible(false);
+					WCB_ShotgunSecondary.setVisible(false);
+					WCB_SniperRifle.setVisible(false);
+					WCB_SpecialPrimary.setVisible(false);
+					WCB_SpecialSecondary.setVisible(false);
+					WCB_SubmachineGun.setVisible(false);
+				} else if (WC.getSelectedItem().toString().contains("Pistol")) {
+					WCB_Akimbo.setVisible(false);
+					WCB_AssaultRifle.setVisible(false);
+					WCB_LightMachineGun.setVisible(false);
+					WCB_Pistol.setVisible(true);
+					WCB_ShotgunPrimary.setVisible(false);
+					WCB_ShotgunSecondary.setVisible(false);
+					WCB_SniperRifle.setVisible(false);
+					WCB_SpecialPrimary.setVisible(false);
+					WCB_SpecialSecondary.setVisible(false);
+					WCB_SubmachineGun.setVisible(false);
+				} else if (WC.getSelectedItem().toString().contains("Shotgun Primary")) {
+					WCB_Akimbo.setVisible(false);
+					WCB_AssaultRifle.setVisible(false);
+					WCB_LightMachineGun.setVisible(false);
+					WCB_Pistol.setVisible(false);
+					WCB_ShotgunPrimary.setVisible(true);
+					WCB_ShotgunSecondary.setVisible(false);
+					WCB_SniperRifle.setVisible(false);
+					WCB_SpecialPrimary.setVisible(false);
+					WCB_SpecialSecondary.setVisible(false);
+					WCB_SubmachineGun.setVisible(false);
+				} else if (WC.getSelectedItem().toString().contains("Shotgun Secondary")) {
+					WCB_Akimbo.setVisible(false);
+					WCB_AssaultRifle.setVisible(false);
+					WCB_LightMachineGun.setVisible(false);
+					WCB_Pistol.setVisible(false);
+					WCB_ShotgunPrimary.setVisible(false);
+					WCB_ShotgunSecondary.setVisible(true);
+					WCB_SniperRifle.setVisible(false);
+					WCB_SpecialPrimary.setVisible(false);
+					WCB_SpecialSecondary.setVisible(false);
+					WCB_SubmachineGun.setVisible(false);
+				} else if (WC.getSelectedItem().toString().contains("Sniper Rifle")) {
+					WCB_Akimbo.setVisible(false);
+					WCB_AssaultRifle.setVisible(false);
+					WCB_LightMachineGun.setVisible(false);
+					WCB_Pistol.setVisible(false);
+					WCB_ShotgunPrimary.setVisible(false);
+					WCB_ShotgunSecondary.setVisible(false);
+					WCB_SniperRifle.setVisible(true);
+					WCB_SpecialPrimary.setVisible(false);
+					WCB_SpecialSecondary.setVisible(false);
+					WCB_SubmachineGun.setVisible(false);
+				} else if (WC.getSelectedItem().toString().contains("Special Primary")) {
+					WCB_Akimbo.setVisible(false);
+					WCB_AssaultRifle.setVisible(false);
+					WCB_LightMachineGun.setVisible(false);
+					WCB_Pistol.setVisible(false);
+					WCB_ShotgunPrimary.setVisible(false);
+					WCB_ShotgunSecondary.setVisible(false);
+					WCB_SniperRifle.setVisible(false);
+					WCB_SpecialPrimary.setVisible(true);
+					WCB_SpecialSecondary.setVisible(false);
+					WCB_SubmachineGun.setVisible(false);
+				} else if (WC.getSelectedItem().toString().contains("Special Secondary")) {
+					WCB_Akimbo.setVisible(false);
+					WCB_AssaultRifle.setVisible(false);
+					WCB_LightMachineGun.setVisible(false);
+					WCB_Pistol.setVisible(false);
+					WCB_ShotgunPrimary.setVisible(false);
+					WCB_ShotgunSecondary.setVisible(false);
+					WCB_SniperRifle.setVisible(false);
+					WCB_SpecialPrimary.setVisible(false);
+					WCB_SpecialSecondary.setVisible(true);
+					WCB_SubmachineGun.setVisible(false);
+				} else if (WC.getSelectedItem().toString().contains("Submachine Gun")) {
+					WCB_Akimbo.setVisible(false);
+					WCB_AssaultRifle.setVisible(false);
+					WCB_LightMachineGun.setVisible(false);
+					WCB_Pistol.setVisible(false);
+					WCB_ShotgunPrimary.setVisible(false);
+					WCB_ShotgunSecondary.setVisible(false);
+					WCB_SniperRifle.setVisible(false);
+					WCB_SpecialPrimary.setVisible(false);
+					WCB_SpecialSecondary.setVisible(false);
+					WCB_SubmachineGun.setVisible(true);
+				}
+			}
+		});
+		
+		Change_Weapon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (WC.getSelectedItem().toString().contains("Akimbo")) {
+					if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Bernetti 9")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_b92fs");
+					}  else if (WCB_Akimbo.getSelectedItem().toString().contains("Brothers Grimm 12G")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Castigo .44")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Chimano 88")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Chimano Compact")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Chimano Custom")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Compact-5")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Contractor")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Crosskill")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Crosskill Guard")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Deagle")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Heather")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Interceptor 45")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Krinkov")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Baby Deagle")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Bronco .44")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Broomstick")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Gruber Kurz")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo LEO")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Matever .357")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Parabellum")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Signature .40")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo STRYK 18c")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo White Streak")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo M13 9mm")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Goliath 12G")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Judge")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Blaster 9mm")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Chicago Typewriter")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo CMP")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Cobra")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo CR 805B")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Jackal")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Jacket's Piece")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Kobus 90")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Kross Vertex")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Mark 10")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Micro Uzi")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo MP40")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Para")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Patchett L2A1")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Signature")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo SpecOps")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Swedish K")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Tatonka")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Uzi")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Bernetti Auto Pistol")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Czech 92 Pistol")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Igor Automatik Pistol")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Holt 9 mm Pistol")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Frenchman Model 87 Revolver")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Crosskill Chunky Compact Pistol")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo AK Gen 21 Tactical")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Miyaka 10 Special")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Káng Arms Model 54")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Gecko M2")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Kahn .357")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo VD-12")) {
+						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+					}
+
+				} else if (WC.getSelectedItem().toString().contains("Assault Rifle")) {
+
+				} else if (WC.getSelectedItem().toString().contains("Light Machine Gun")) {
+
+				} else if (WC.getSelectedItem().toString().contains("Pistol")) {
+
+				} else if (WC.getSelectedItem().toString().contains("Shotgun Primary")) {
+
+				} else if (WC.getSelectedItem().toString().contains("Shotgun Secondary")) {
+
+				} else if (WC.getSelectedItem().toString().contains("Sniper Rifle")) {
+
+				} else if (WC.getSelectedItem().toString().contains("Special Primary")) {
+
+				} else if (WC.getSelectedItem().toString().contains("Special Secondary")) {
+
+				} else if (WC.getSelectedItem().toString().contains("Submachine Gun")) {
+
+				}
+			}
+		});
 		
 	}
 }
 
 /*
+
+
  */
 
