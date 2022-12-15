@@ -14,10 +14,19 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JTextPane;
+import javax.swing.JTextField;
+import javax.swing.JSlider;
 
 public class WRP {
 
 	private JFrame FWRP;
+	private JTextField CAM;
+	private JTextField AM;
+	private JTextField FR;
+	private JTextField RCL;
+	private JTextField DMG;
+	private JTextField SPR;
 
 	/**
 	 * Launch the application.
@@ -65,20 +74,70 @@ public class WRP {
 		JLabel WPN_test = new JLabel("Weapon Test");
 		JLabel WPN_Name = new JLabel("Weapon Name:");
 		JLabel ID = new JLabel("ID");
+		JTextPane Output = new JTextPane();
+		Output.setFont(new Font("Arial", Font.PLAIN, 12));
+		Output.setEditable(false);
+		JButton Change_Weapon_Stats = new JButton("Change Weapon");
 		// ACSSES ALL J THINGS \\
 		
 		FWRP = new JFrame();
 		FWRP.setFont(new Font("Comic Sans MS", Font.PLAIN, 12));
 		FWRP.setForeground(Color.BLACK);
-		FWRP.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\904365002\\git\\PD2-WRP\\PD2\\src\\program\\logo.png"));
+		FWRP.setIconImage(Toolkit.getDefaultToolkit().getImage(WRP.class.getResource("/program/logo.png")));
 		FWRP.setTitle("Weapon Rebalance Program");
 		FWRP.setBounds(100, 100, 1920, 1080);
 		FWRP.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		FWRP.getContentPane().setLayout(null);
 		
+		// WEAPON LABEL SHET HERE
 		ID.setVisible(false);
-		ID.setBounds(10, 120, 46, 14);
+		
+		ID.setBounds(10, 120, 187, 14);
 		FWRP.getContentPane().add(ID);
+		
+		JLabel Weapon_Stats = new JLabel("Weapon Stats");
+		Weapon_Stats.setBounds(10, 116, 201, 22);
+		FWRP.getContentPane().add(Weapon_Stats);
+		
+		JLabel Displayed_Stats = new JLabel("Displayed Stats");
+		Displayed_Stats.setBounds(10, 131, 201, 22);
+		FWRP.getContentPane().add(Displayed_Stats);
+		
+		JLabel Clip_Ammo_Max_Label = new JLabel("Clip Ammo Max:");
+		Clip_Ammo_Max_Label.setBounds(10, 149, 201, 22);
+		FWRP.getContentPane().add(Clip_Ammo_Max_Label);
+		
+		JLabel Ammo_Max_Label = new JLabel("Ammo Max:");
+		Ammo_Max_Label.setBounds(10, 170, 201, 22);
+		FWRP.getContentPane().add(Ammo_Max_Label);
+		
+		JLabel Fire_Rate_label = new JLabel("Fire Rate:");
+		Fire_Rate_label.setBounds(10, 189, 201, 22);
+		FWRP.getContentPane().add(Fire_Rate_label);
+		
+		JLabel Damage_label = new JLabel("Damage:");
+		Damage_label.setBounds(10, 208, 201, 22);
+		FWRP.getContentPane().add(Damage_label);
+		
+		JLabel Spread_label = new JLabel("Spread:");
+		Spread_label.setBounds(10, 229, 201, 22);
+		FWRP.getContentPane().add(Spread_label);
+		
+		JLabel Recoil_Label = new JLabel("Recoil:");
+		Recoil_Label.setBounds(10, 248, 201, 22);
+		FWRP.getContentPane().add(Recoil_Label);
+		
+		JLabel Concealment_label = new JLabel("Concealment:");
+		Concealment_label.setBounds(10, 275, 201, 22);
+		FWRP.getContentPane().add(Concealment_label);
+		
+		JLabel Suppression_Label = new JLabel("Suppression:");
+		Suppression_Label.setBounds(10, 324, 201, 22);
+		FWRP.getContentPane().add(Suppression_Label);
+		
+		JLabel Reload_label = new JLabel("Reload Speed:");
+		Reload_label.setBounds(10, 373, 201, 22);
+		FWRP.getContentPane().add(Reload_label);
 		
 		WPN_Name.setBounds(10, 98, 201, 22);
 		FWRP.getContentPane().add(WPN_Name);
@@ -91,6 +150,83 @@ public class WRP {
 		
 		WeaponChoice.setBounds(10, 50, 201, 22);
 		FWRP.getContentPane().add(WeaponChoice);
+		
+		// WEAPON LABEL SHET HERE
+		
+		// STATS HERE
+		
+		CAM = new JTextField();
+		CAM.setToolTipText("Magazine size.");
+		CAM.setBounds(110, 150, 124, 20);
+		FWRP.getContentPane().add(CAM);
+		CAM.setColumns(10);
+		
+		AM = new JTextField();
+		AM.setToolTipText("Total ammo.");
+		AM.setColumns(10);
+		AM.setBounds(110, 170, 124, 20);
+		FWRP.getContentPane().add(AM);
+		
+		FR = new JTextField();
+		FR.setToolTipText("Firerate.");
+		FR.setColumns(10);
+		FR.setBounds(110, 190, 124, 20);
+		FWRP.getContentPane().add(FR);
+		
+		DMG = new JTextField();
+		DMG.setToolTipText("Damage, the maximum vanilla value is 210. Some weapons, however, mostly sniper rifles and explosives, have a damage multiplier that enables them to raise the damage above 210. Remember to factor it in if you choose to rebalance these. Additionally, changing this stat won't affect the actual damage dealt by explosives. In their case, the damage stat exists only for display, and the actual damage is handled by the projectile.");
+		DMG.setColumns(10);
+		DMG.setBounds(110, 210, 124, 20);
+		FWRP.getContentPane().add(DMG);
+		
+		SPR = new JTextField();
+		SPR.setToolTipText("Accuracy, gets multiplied by 4 and 4 is subtracted (for example 10 spread = 36 accuracy).");
+		SPR.setColumns(10);
+		SPR.setBounds(110, 230, 124, 20);
+		FWRP.getContentPane().add(SPR);
+		
+		RCL = new JTextField();
+		RCL.setToolTipText("Stability, gets multiplied by 4 and 4 is subtracted (for example 10 recoil = 36 stability).");
+		RCL.setColumns(10);
+		RCL.setBounds(110, 250, 124, 20);
+		FWRP.getContentPane().add(RCL);
+		
+		JSlider CON = new JSlider();
+		CON.setToolTipText("Concealment. The max value is 30, but it can be increased above that with attachments.");
+		CON.setSnapToTicks(true);
+		CON.setPaintLabels(true);
+		CON.setPaintTicks(true);
+		CON.setValue(15);
+		CON.setMaximum(30);
+		CON.setMajorTickSpacing(1);
+		CON.setBounds(109, 275, 455, 38);
+		FWRP.getContentPane().add(CON);
+		
+		JSlider SUP = new JSlider();
+		SUP.setToolTipText("Threat, the distance on which enemies are suppressed by your gun, meaning they duck and jump for cover. 1 is the maximum value (43), 20 is the minimum value (0).");
+		SUP.setSnapToTicks(true);
+		SUP.setPaintLabels(true);
+		SUP.setPaintTicks(true);
+		SUP.setValue(10);
+		SUP.setMinimum(1);
+		SUP.setMaximum(20);
+		SUP.setMajorTickSpacing(1);
+		SUP.setBounds(109, 324, 455, 38);
+		FWRP.getContentPane().add(SUP);
+		
+		JSlider RS = new JSlider();
+		RS.setToolTipText("The time it takes the weapon to reload. 11 is the default value. Values lower than 11 increase the reload time, down to the minimum value of 1 (doubled reload length). values above 11 decrease the reload time, up to a maximum value of 21 (halved reload length).");
+		RS.setSnapToTicks(true);
+		RS.setPaintLabels(true);
+		RS.setPaintTicks(true);
+		RS.setMajorTickSpacing(1);
+		RS.setValue(11);
+		RS.setMinimum(1);
+		RS.setMaximum(21);
+		RS.setBounds(109, 374, 455, 38);
+		FWRP.getContentPane().add(RS);
+		
+		// STATS HERE
 		
 		// JCOMBO BOX GROUP
 		WC.setMaximumRowCount(10);
@@ -154,7 +290,13 @@ public class WRP {
 		
 		Change_Weapon.setBounds(221, 76, 187, 23);
 		FWRP.getContentPane().add(Change_Weapon);
+		
+		Change_Weapon_Stats.setBounds(10, 467, 187, 23);
+		FWRP.getContentPane().add(Change_Weapon_Stats);
 		// JBUTTON GROUP
+		
+		Output.setBounds(10, 631, 399, 399);
+		FWRP.getContentPane().add(Output);
 		
 		Change_Weapon_Category.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -280,118 +422,175 @@ public class WRP {
 						ID.setText("x_b92fs");
 					}  else if (WCB_Akimbo.getSelectedItem().toString().contains("Brothers Grimm 12G")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_basset");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Castigo .44")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_chinchilla");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Chimano 88")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_g17");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Chimano Compact")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("jowi");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Chimano Custom")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_g22c");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Compact-5")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_mp5");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Contractor")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_packrat");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Crosskill")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_1911");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Crosskill Guard")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_shrew");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Deagle")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_deagle");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Heather")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_sr2");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Interceptor 45")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_usp");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Krinkov")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_akmsu");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Baby Deagle")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_sparrow");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Bronco .44")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_rage");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Broomstick")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_c96");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Gruber Kurz")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_ppk");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo LEO")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_hs2000");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Matever .357")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_2006m");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Parabellum")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_breech");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Signature .40")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_p226");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo STRYK 18c")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_g18c");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo White Streak")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_pl14");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo M13 9mm")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_legacy");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Goliath 12G")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_rota");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Judge")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_judge");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Blaster 9mm")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_tec9");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Chicago Typewriter")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_m1928");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo CMP")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_mp9");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Cobra")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_scorpion");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo CR 805B")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_hajk");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Jackal")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_schakal");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Jacket's Piece")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_cobray");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Kobus 90")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_p90");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Kross Vertex")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_polymer");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Mark 10")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_mac10");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Micro Uzi")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_baka");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo MP40")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_erma");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Para")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_olympic");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Patchett L2A1")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_sterling");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Signature")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_shepheard");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo SpecOps")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_mp7");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Swedish K")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_m45");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Tatonka")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_coal");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Uzi")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_uzi");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Bernetti Auto Pistol")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_beer");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Czech 92 Pistol")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_czech");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Igor Automatik Pistol")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_stech");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Holt 9 mm Pistol")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_holt");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Frenchman Model 87 Revolver")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_model3");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Crosskill Chunky Compact Pistol")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_m1911");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo AK Gen 21 Tactical")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_vityaz");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Miyaka 10 Special")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_pm9");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Káng Arms Model 54")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_type54");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Gecko M2")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_maxim9");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Kahn .357")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_korth");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo VD-12")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
+						ID.setText("x_sko12");
 					}
 
 				} else if (WC.getSelectedItem().toString().contains("Assault Rifle")) {
@@ -416,11 +615,33 @@ public class WRP {
 			}
 		});
 		
+		Change_Weapon_Stats.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Output.setText("Displayed stats" + "\n" +
+							   "self."+ ID.getText() + ".CLIP_AMMO_MAX = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".fire_mode_data.fire_rate = 60 / "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.damage = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.spread = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.recoil = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.suppression = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.concealment = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.reload = "+ CAM.getText() + "\n" +
+						       "\n" +
+						       "Hidden stats" + "\n" +
+							   "self."+ ID.getText() + ".stats_modifiers = {damage = "+ CAM.getText() + "}" + "\n" +
+						       "self."+ ID.getText() + ".AMMO_PICKUP = {"+ CAM.getText() +"," + CAM.getText() + "}"  + "\n" +
+						       "self."+ ID.getText() + ".can_shoot_through_enemy = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".can_shoot_through_wall = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".can_shoot_through_shield = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".armor_piercing_chance = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.alert_size = "+ CAM.getText() + "\n"
+							  );
+			}
+		});
+		
 	}
 }
 
 /*
-
-
  */
 
