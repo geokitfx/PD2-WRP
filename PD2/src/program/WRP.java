@@ -619,13 +619,13 @@ public class WRP {
 			public void actionPerformed(ActionEvent e) {
 				Output.setText("Displayed stats" + "\n" +
 							   "self."+ ID.getText() + ".CLIP_AMMO_MAX = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".fire_mode_data.fire_rate = 60 / "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".stats.damage = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".stats.spread = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".stats.recoil = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".stats.suppression = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".stats.concealment = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".stats.reload = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".fire_mode_data.fire_rate = 60 / "+ FR.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.damage = "+ DMG.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.spread = "+ SPR.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.recoil = "+ RCL.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.suppression = "+ SUP.getValue() + "\n" +
+						       "self."+ ID.getText() + ".stats.concealment = "+ CON.getValue() + "\n" +
+						       "self."+ ID.getText() + ".stats.reload = "+ RS.getValue() + "\n" +
 						       "\n" +
 						       "Hidden stats" + "\n" +
 							   "self."+ ID.getText() + ".stats_modifiers = {damage = "+ CAM.getText() + "}" + "\n" +
