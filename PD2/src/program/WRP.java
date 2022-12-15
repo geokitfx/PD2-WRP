@@ -174,7 +174,7 @@ public class WRP {
 		FWRP.getContentPane().add(FR);
 		
 		DMG = new JTextField();
-		DMG.setToolTipText("Damage, the maximum vanilla value is 210. Some weapons, however, mostly sniper rifles and explosives, have a damage multiplier that enables them to raise the damage above 210. Remember to factor it in if you choose to rebalance these. Additionally, changing this stat won't affect the actual damage dealt by explosives. In their case, the damage stat exists only for display, and the actual damage is handled by the projectile.");
+		DMG.setToolTipText("Damage, the maximum vanilla value is 210. \r\nSome weapons, however, mostly sniper rifles and explosives, have a damage multiplier that enables them to raise the damage above 210. \r\nRemember to factor it in if you choose to rebalance these. \r\nAdditionally, changing this stat won't affect the actual damage dealt by explosives. \r\nIn their case, the damage stat exists only for display, and the actual damage is handled by the projectile.");
 		DMG.setColumns(10);
 		DMG.setBounds(110, 210, 124, 20);
 		FWRP.getContentPane().add(DMG);
@@ -192,7 +192,7 @@ public class WRP {
 		FWRP.getContentPane().add(RCL);
 		
 		JSlider CON = new JSlider();
-		CON.setToolTipText("Concealment. The max value is 30, but it can be increased above that with attachments.");
+		CON.setToolTipText("Concealment. \r\nThe max value is 30, but it can be increased above that with attachments.");
 		CON.setSnapToTicks(true);
 		CON.setPaintLabels(true);
 		CON.setPaintTicks(true);
@@ -203,7 +203,7 @@ public class WRP {
 		FWRP.getContentPane().add(CON);
 		
 		JSlider SUP = new JSlider();
-		SUP.setToolTipText("Threat, the distance on which enemies are suppressed by your gun, meaning they duck and jump for cover. 1 is the maximum value (43), 20 is the minimum value (0).");
+		SUP.setToolTipText("Threat, the distance on which enemies are suppressed by your gun, meaning they duck and jump for cover. \r\n1 is the maximum value (43), 20 is the minimum value (0).");
 		SUP.setSnapToTicks(true);
 		SUP.setPaintLabels(true);
 		SUP.setPaintTicks(true);
@@ -215,7 +215,7 @@ public class WRP {
 		FWRP.getContentPane().add(SUP);
 		
 		JSlider RS = new JSlider();
-		RS.setToolTipText("The time it takes the weapon to reload. 11 is the default value. Values lower than 11 increase the reload time, down to the minimum value of 1 (doubled reload length). values above 11 decrease the reload time, up to a maximum value of 21 (halved reload length).");
+		RS.setToolTipText("The time it takes the weapon to reload. \r\n11 is the default value. Values lower than 11 increase the reload time, down to the minimum value of 1 (doubled reload length). \r\nvalues above 11 decrease the reload time, up to a maximum value of 21 (halved reload length).");
 		RS.setSnapToTicks(true);
 		RS.setPaintLabels(true);
 		RS.setPaintTicks(true);
