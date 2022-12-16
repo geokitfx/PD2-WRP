@@ -27,6 +27,13 @@ public class WRP {
 	private JTextField RCL;
 	private JTextField DMG;
 	private JTextField SPR;
+	private JTextField SM_DM;
+	private JTextField AP_Min;
+	private JTextField APC;
+	private JTextField AP_Max;
+	private JTextField Shotgun_DMG_Near;
+	private JTextField Shotgun_DMG_Far;
+	private JTextField Shotgun_Rays;
 
 	/**
 	 * Launch the application.
@@ -75,9 +82,38 @@ public class WRP {
 		JLabel WPN_Name = new JLabel("Weapon Name:");
 		JLabel ID = new JLabel("ID");
 		JTextPane Output = new JTextPane();
+		Output.setForeground(Color.WHITE);
+		Output.setBackground(Color.DARK_GRAY);
 		Output.setFont(new Font("Arial", Font.PLAIN, 12));
 		Output.setEditable(false);
 		JButton Change_Weapon_Stats = new JButton("Change Weapon");
+		
+		JLabel Shotgun_Exclusive_Stats = new JLabel("Shotgun Exclusive Stats");
+		JLabel Shotgun_ES_Near = new JLabel("Damage Near:");
+		JLabel Shotgun_ES_Far = new JLabel("Damage Far:");
+		JLabel Shotgun_ES_rays = new JLabel("Rays:");
+		JLabel Shotgun_ES_Far_Note1 = new JLabel("The distance from the point where falloff is applied to the point where the damage is no longer applied. for example, if damage_near is 300 and damage_far is 300,");
+		JLabel Shotgun_ES_Far_Note2 = new JLabel("then after 3 meters the damage will start falling off, decreasing gradually with distance, and at 6 meters (300+300=600) the hits will no longer register. ");
+		JLabel Shotgun_ES_Far_Note3 = new JLabel("Applies ONLY to shotguns. by default the value is 5000 for all shotguns.");
+		JLabel Shotgun_ES_Rays_Note = new JLabel("The amount of pellets shot from the gun. each pellet deals full damage, but only one (per enemy) can apply it - so more pellets don't mean more damage, but more chances to hit. applies ONLY to shotguns.");
+		JLabel Shotgun_ES_Near_Note = new JLabel("The distance before any falloff is applied, measured in centimeters (100 = 1m). applies ONLY to shotguns. by default the value is 2000 for all shotguns.");
+		Shotgun_DMG_Near = new JTextField();
+		Shotgun_DMG_Far = new JTextField();
+		Shotgun_Rays = new JTextField();
+		Shotgun_Exclusive_Stats.setVisible(false);
+		Shotgun_ES_Near.setVisible(false);
+		Shotgun_ES_Far.setVisible(false);
+		Shotgun_ES_rays.setVisible(false);
+		Shotgun_ES_Far_Note1.setVisible(false);
+		Shotgun_ES_Far_Note2.setVisible(false);
+		Shotgun_ES_Far_Note2.setVisible(false);
+		Shotgun_ES_Far_Note3.setVisible(false);
+		Shotgun_ES_Near_Note.setVisible(false);
+		Shotgun_ES_Rays_Note.setVisible(false);
+		Shotgun_DMG_Near.setVisible(false);
+		Shotgun_DMG_Far.setVisible(false);
+		Shotgun_Rays.setVisible(false);
+		
 		// ACSSES ALL J THINGS \\
 		
 		FWRP = new JFrame();
@@ -139,6 +175,39 @@ public class WRP {
 		Reload_label.setBounds(10, 373, 201, 22);
 		FWRP.getContentPane().add(Reload_label);
 		
+		JLabel Hidden_Stats = new JLabel("Hidden Stats");
+		Hidden_Stats.setBounds(244, 131, 201, 22);
+		FWRP.getContentPane().add(Hidden_Stats);
+		
+		JLabel Stats_Modifiers = new JLabel("Damage Multiplier:");
+		Stats_Modifiers.setBounds(244, 149, 201, 22);
+		FWRP.getContentPane().add(Stats_Modifiers);
+		
+		JLabel Ammo_Pickup = new JLabel("Ammo Pickup {Minimum, Maximum}:");
+		Ammo_Pickup.setBounds(244, 170, 237, 22);
+		FWRP.getContentPane().add(Ammo_Pickup);
+		
+		JLabel Can_Shoot_Through_Enemy = new JLabel("Can Shoot Through Enemy:");
+		Can_Shoot_Through_Enemy.setBounds(244, 189, 201, 22);
+		FWRP.getContentPane().add(Can_Shoot_Through_Enemy);
+		
+		JLabel Can_Shoot_Through_Wall = new JLabel("Can Shoot Through Wall:");
+		Can_Shoot_Through_Wall.setBounds(244, 208, 201, 22);
+		FWRP.getContentPane().add(Can_Shoot_Through_Wall);
+		
+		JLabel Can_Shoot_Through_Shield = new JLabel("Can Shoot Through Shield:");
+		Can_Shoot_Through_Shield.setBounds(244, 229, 201, 22);
+		FWRP.getContentPane().add(Can_Shoot_Through_Shield);
+		
+		JLabel Armor_Piercing_Chance = new JLabel("Armor Piercing Chance:");
+		Armor_Piercing_Chance.setToolTipText("1 for always piercing, 0 for no piercing. can be any value inbetween for a chance of piercing.");
+		Armor_Piercing_Chance.setBounds(244, 248, 201, 22);
+		FWRP.getContentPane().add(Armor_Piercing_Chance);
+		
+		JLabel Alert_Size = new JLabel("Alert Size:");
+		Alert_Size.setBounds(679, 149, 201, 22);
+		FWRP.getContentPane().add(Alert_Size);
+		
 		WPN_Name.setBounds(10, 98, 201, 22);
 		FWRP.getContentPane().add(WPN_Name);
 		
@@ -151,10 +220,20 @@ public class WRP {
 		WeaponChoice.setBounds(10, 50, 201, 22);
 		FWRP.getContentPane().add(WeaponChoice);
 		
+		Shotgun_Exclusive_Stats.setBounds(574, 279, 201, 22);
+		FWRP.getContentPane().add(Shotgun_Exclusive_Stats);
+		
+		Shotgun_ES_Near.setBounds(574, 300, 201, 14);
+		FWRP.getContentPane().add(Shotgun_ES_Near);
+		
+		Shotgun_ES_Far.setBounds(574, 321, 201, 14);
+		FWRP.getContentPane().add(Shotgun_ES_Far);
+		
+		Shotgun_ES_rays.setBounds(574, 342, 201, 14);
+		FWRP.getContentPane().add(Shotgun_ES_rays);
 		// WEAPON LABEL SHET HERE
 		
 		// STATS HERE
-		
 		CAM = new JTextField();
 		CAM.setToolTipText("Magazine size.");
 		CAM.setBounds(110, 150, 124, 20);
@@ -226,7 +305,307 @@ public class WRP {
 		RS.setBounds(109, 374, 455, 38);
 		FWRP.getContentPane().add(RS);
 		
+		JSlider AS = new JSlider();
+		AS.setValue(10);
+		AS.setToolTipText("The distance at which your gun shots are audible, matters only really in stealth. \r\nSimilarly to suppression, 1 is the maximum value, 20 is the minimum value (the gun is quiet as far as the game is concerned).");
+		AS.setSnapToTicks(true);
+		AS.setPaintTicks(true);
+		AS.setPaintLabels(true);
+		AS.setMinimum(1);
+		AS.setMaximum(20);
+		AS.setMajorTickSpacing(1);
+		AS.setBounds(679, 169, 455, 38);
+		FWRP.getContentPane().add(AS);
+		
+		SM_DM = new JTextField();
+		SM_DM.setToolTipText("Damage multiplier, used for sniper rifles and the displayed stat of explosives. The weapon damage as defined on the left will be modified by the value put in in place here.");
+		SM_DM.setBounds(459, 150, 101, 20);
+		FWRP.getContentPane().add(SM_DM);
+		SM_DM.setColumns(10);
+		
+		AP_Min = new JTextField();
+		AP_Min.setToolTipText("Ammo pickup is randomized between the two values.");
+		AP_Min.setColumns(10);
+		AP_Min.setBounds(459, 170, 101, 20);
+		FWRP.getContentPane().add(AP_Min);
+		
+		AP_Max = new JTextField();
+		AP_Max.setToolTipText("Ammo pickup is randomized between the two values.");
+		AP_Max.setColumns(10);
+		AP_Max.setBounds(568, 170, 101, 20);
+		FWRP.getContentPane().add(AP_Max);
+		
+		APC = new JTextField();
+		APC.setColumns(10);
+		APC.setBounds(459, 250, 101, 20);
+		FWRP.getContentPane().add(APC);
+		
+		Shotgun_DMG_Near.setBounds(656, 300, 119, 20);
+		FWRP.getContentPane().add(Shotgun_DMG_Near);
+		Shotgun_DMG_Near.setColumns(10);
+		
+		Shotgun_DMG_Far.setColumns(10);
+		Shotgun_DMG_Far.setBounds(656, 321, 119, 20);
+		FWRP.getContentPane().add(Shotgun_DMG_Far);
+		
+		Shotgun_Rays.setColumns(10);
+		Shotgun_Rays.setBounds(656, 342, 119, 20);
+		FWRP.getContentPane().add(Shotgun_Rays);
 		// STATS HERE
+		
+		// EXPLNATIONS
+		JLabel DTAS = new JLabel("Distance table for the Alert Size stat:");
+		DTAS.setBounds(414, 631, 243, 22);
+		FWRP.getContentPane().add(DTAS);
+		
+		JLabel DTAS_1 = new JLabel("1 = 300 meters");
+		DTAS_1.setBounds(414, 648, 243, 22);
+		FWRP.getContentPane().add(DTAS_1);
+		
+		JLabel DTAS_2 = new JLabel("2 = 200m");
+		DTAS_2.setBounds(414, 665, 243, 22);
+		FWRP.getContentPane().add(DTAS_2);
+		
+		JLabel DTAS_3 = new JLabel("3 = 150m");
+		DTAS_3.setBounds(414, 681, 243, 22);
+		FWRP.getContentPane().add(DTAS_3);
+		
+		JLabel DTAS_4 = new JLabel("4 = 100m");
+		DTAS_4.setBounds(414, 698, 243, 22);
+		FWRP.getContentPane().add(DTAS_4);
+		
+		JLabel DTAS_5 = new JLabel("5 = 75m");
+		DTAS_5.setBounds(414, 714, 243, 22);
+		FWRP.getContentPane().add(DTAS_5);
+		
+		JLabel DTAS_6 = new JLabel("6 = 60m");
+		DTAS_6.setBounds(414, 731, 243, 22);
+		FWRP.getContentPane().add(DTAS_6);
+		
+		JLabel DTAS_7 = new JLabel("7 = 45m");
+		DTAS_7.setBounds(414, 747, 243, 22);
+		FWRP.getContentPane().add(DTAS_7);
+		
+		JLabel DTAS_8 = new JLabel("8 = 40m");
+		DTAS_8.setBounds(414, 764, 243, 22);
+		FWRP.getContentPane().add(DTAS_8);
+		
+		JLabel DTAS_9 = new JLabel("9 = 35m");
+		DTAS_9.setBounds(414, 780, 243, 22);
+		FWRP.getContentPane().add(DTAS_9);
+		
+		JLabel DTAS_10 = new JLabel("10 = 18m");
+		DTAS_10.setBounds(414, 797, 243, 22);
+		FWRP.getContentPane().add(DTAS_10);
+		
+		JLabel DTAS_11 = new JLabel("11 = 15m");
+		DTAS_11.setBounds(414, 813, 243, 22);
+		FWRP.getContentPane().add(DTAS_11);
+		
+		JLabel DTAS_12 = new JLabel("12 = 12m");
+		DTAS_12.setBounds(414, 830, 243, 22);
+		FWRP.getContentPane().add(DTAS_12);
+		
+		JLabel DTAS_13 = new JLabel("13 = 10m");
+		DTAS_13.setBounds(414, 846, 243, 22);
+		FWRP.getContentPane().add(DTAS_13);
+		
+		JLabel DTAS_14 = new JLabel("14 = 8.5m");
+		DTAS_14.setBounds(414, 863, 243, 22);
+		FWRP.getContentPane().add(DTAS_14);
+		
+		JLabel DTAS_15 = new JLabel("15 = 7m");
+		DTAS_15.setBounds(414, 879, 243, 22);
+		FWRP.getContentPane().add(DTAS_15);
+		
+		JLabel DTAS_16 = new JLabel("16 = 5m");
+		DTAS_16.setBounds(414, 896, 243, 22);
+		FWRP.getContentPane().add(DTAS_16);
+		
+		JLabel DTAS_17 = new JLabel("17 = 3.5m");
+		DTAS_17.setBounds(414, 912, 243, 22);
+		FWRP.getContentPane().add(DTAS_17);
+		
+		JLabel DTAS_18 = new JLabel("18 = 2m");
+		DTAS_18.setBounds(414, 929, 243, 22);
+		FWRP.getContentPane().add(DTAS_18);
+		
+		JLabel DTAS_19 = new JLabel("19 = 1m");
+		DTAS_19.setBounds(414, 945, 243, 22);
+		FWRP.getContentPane().add(DTAS_19);
+		
+		JLabel DTAS_20 = new JLabel("20 = 0m");
+		DTAS_20.setBounds(414, 962, 243, 22);
+		FWRP.getContentPane().add(DTAS_20);
+		
+		JLabel RSE = new JLabel("Speed table for the Reload Speed stat:");
+		RSE.setBounds(667, 631, 243, 22);
+		FWRP.getContentPane().add(RSE);
+		
+		JLabel RSE_1 = new JLabel("1 = 0.5");
+		RSE_1.setBounds(667, 648, 243, 22);
+		FWRP.getContentPane().add(RSE_1);
+		
+		JLabel RSE_2 = new JLabel("2 = 0.55");
+		RSE_2.setBounds(667, 665, 243, 22);
+		FWRP.getContentPane().add(RSE_2);
+		
+		JLabel RSE_3 = new JLabel("3 = 0.6");
+		RSE_3.setBounds(667, 681, 243, 22);
+		FWRP.getContentPane().add(RSE_3);
+		
+		JLabel RSE_4 = new JLabel("4 = 0.65");
+		RSE_4.setBounds(667, 698, 243, 22);
+		FWRP.getContentPane().add(RSE_4);
+		
+		JLabel RSE_5 = new JLabel("5 = 0.7");
+		RSE_5.setBounds(667, 714, 243, 22);
+		FWRP.getContentPane().add(RSE_5);
+		
+		JLabel RSE_6 = new JLabel("6 = 0.75");
+		RSE_6.setBounds(667, 731, 243, 22);
+		FWRP.getContentPane().add(RSE_6);
+		
+		JLabel RSE_7 = new JLabel("7 = 0.8");
+		RSE_7.setBounds(667, 747, 243, 22);
+		FWRP.getContentPane().add(RSE_7);
+		
+		JLabel RSE_8 = new JLabel("8 = 0.85");
+		RSE_8.setBounds(667, 764, 243, 22);
+		FWRP.getContentPane().add(RSE_8);
+		
+		JLabel RSE_9 = new JLabel("9 = 0.9");
+		RSE_9.setBounds(667, 780, 243, 22);
+		FWRP.getContentPane().add(RSE_9);
+		
+		JLabel RSE_10 = new JLabel("10 = 0.95");
+		RSE_10.setBounds(667, 797, 243, 22);
+		FWRP.getContentPane().add(RSE_10);
+		
+		JLabel RSE_11 = new JLabel("11 = 1.0");
+		RSE_11.setBounds(667, 813, 243, 22);
+		FWRP.getContentPane().add(RSE_11);
+		
+		JLabel RSE_12 = new JLabel("12 = 1.1");
+		RSE_12.setBounds(667, 830, 243, 22);
+		FWRP.getContentPane().add(RSE_12);
+		
+		JLabel RSE_13 = new JLabel("13 = 1.2");
+		RSE_13.setBounds(667, 846, 243, 22);
+		FWRP.getContentPane().add(RSE_13);
+		
+		JLabel RSE_14 = new JLabel("14 = 1.3");
+		RSE_14.setBounds(667, 863, 243, 22);
+		FWRP.getContentPane().add(RSE_14);
+		
+		JLabel RSE_15 = new JLabel("15 = 1.4");
+		RSE_15.setBounds(667, 879, 243, 22);
+		FWRP.getContentPane().add(RSE_15);
+		
+		JLabel RSE_16 = new JLabel("16 = 1.5");
+		RSE_16.setBounds(667, 896, 243, 22);
+		FWRP.getContentPane().add(RSE_16);
+		
+		JLabel RSE_17 = new JLabel("17 = 1.6");
+		RSE_17.setBounds(667, 912, 243, 22);
+		FWRP.getContentPane().add(RSE_17);
+		
+		JLabel RSE_18 = new JLabel("18 = 1.7");
+		RSE_18.setBounds(667, 929, 243, 22);
+		FWRP.getContentPane().add(RSE_18);
+		
+		JLabel RSE_19 = new JLabel("19 = 1.8");
+		RSE_19.setBounds(667, 945, 243, 22);
+		FWRP.getContentPane().add(RSE_19);
+		
+		JLabel RSE_20 = new JLabel("20 = 1.9");
+		RSE_20.setBounds(667, 962, 243, 22);
+		FWRP.getContentPane().add(RSE_20);
+		
+		JLabel RSE_21 = new JLabel("21 = 2.0");
+		RSE_21.setBounds(667, 978, 243, 22);
+		FWRP.getContentPane().add(RSE_21);
+		
+		JLabel RSE_E1 = new JLabel("Reload stat explanation: you know it's good when an explanation starts with \"because the devs are stupid\". but,");
+		RSE_E1.setBounds(861, 858, 640, 14);
+		FWRP.getContentPane().add(RSE_E1);
+		
+		JLabel RSE_E2 = new JLabel("because the devs are stupid, reload works in a weird way. it's split up into two things: the reload timers,");
+		RSE_E2.setBounds(861, 874, 577, 14);
+		FWRP.getContentPane().add(RSE_E2);
+		
+		JLabel RSE_E3 = new JLabel("which define how much time passes between the press of a button and the refilling of the magazine, and the animation lenght itself,");
+		RSE_E3.setBounds(861, 890, 671, 14);
+		FWRP.getContentPane().add(RSE_E3);
+		
+		JLabel RSE_E4 = new JLabel("which is not affected by timers. When Overkill introduced speedpull mags, and later decided to rebalance reload times as well,");
+		RSE_E4.setBounds(861, 906, 671, 14);
+		FWRP.getContentPane().add(RSE_E4);
+		
+		JLabel RSE_E5 = new JLabel("they added a third aspect that tied these two together: the reload stat. The reload stat takes the reload timers and the animation lenght and divides them both");
+		RSE_E5.setBounds(861, 922, 806, 14);
+		FWRP.getContentPane().add(RSE_E5);
+		
+		JLabel RSE_E6 = new JLabel("by the same value, so their speed can be changed. 11 corresponds to a value of 1, meaning both are divided by 1 and essentially unchanged.");
+		RSE_E6.setBounds(861, 938, 806, 14);
+		FWRP.getContentPane().add(RSE_E6);
+		
+		JLabel RSE_E7 = new JLabel("Values lower than 11 increment this divisor by 0.05, down to the value of 0.5 at 1. Dividing by half is equal to multiplying by 2, so the reload time is doubled.");
+		RSE_E7.setBounds(861, 954, 806, 14);
+		FWRP.getContentPane().add(RSE_E7);
+		
+		JLabel RSE_E8 = new JLabel("values above 11 increment the divisor by 0.1, up to a value of 2 at 21. Dividing by two halves the reload time.");
+		RSE_E8.setBounds(861, 970, 806, 14);
+		FWRP.getContentPane().add(RSE_E8);
+		
+		JLabel RSE_E9 = new JLabel("Full table To the left, in case you want to be really precise with how you change the reload times.");
+		RSE_E9.setBounds(861, 986, 806, 14);
+		FWRP.getContentPane().add(RSE_E9);
+		
+		JLabel APC_Note = new JLabel("NOTE: 1 for always piercing, 0 for no piercing. can be any value inbetween for a chance of piercing.");
+		APC_Note.setBounds(568, 252, 577, 14);
+		FWRP.getContentPane().add(APC_Note);
+		
+		JLabel NFD_1 = new JLabel("Note for the Damage Stat:");
+		NFD_1.setBounds(459, 26, 301, 14);
+		FWRP.getContentPane().add(NFD_1);
+		
+		JLabel NFD_2 = new JLabel("Damage, the maximum vanilla value is 210. ");
+		NFD_2.setBounds(459, 38, 301, 14);
+		FWRP.getContentPane().add(NFD_2);
+		
+		JLabel NFD_3 = new JLabel("Some weapons, however, mostly sniper rifles and explosives, have a damage multiplier that enables them to raise the damage above 210. ");
+		NFD_3.setBounds(459, 50, 862, 14);
+		FWRP.getContentPane().add(NFD_3);
+		
+		JLabel NFD_4 = new JLabel("Remember to factor it in if you choose to rebalance these. ");
+		NFD_4.setBounds(459, 62, 519, 14);
+		FWRP.getContentPane().add(NFD_4);
+		
+		JLabel NFD_5 = new JLabel("Additionally, changing this stat won't affect the actual damage dealt by explosives. ");
+		NFD_5.setBounds(459, 74, 540, 14);
+		FWRP.getContentPane().add(NFD_5);
+		
+		JLabel NFD_6 = new JLabel("In their case, the damage stat exists only for display, and the actual damage is handled by the projectile.");
+		NFD_6.setBounds(459, 86, 726, 14);
+		FWRP.getContentPane().add(NFD_6);
+		
+		Shotgun_ES_Near_Note.setBounds(785, 300, 1109, 14);
+		FWRP.getContentPane().add(Shotgun_ES_Near_Note);
+		
+		Shotgun_ES_Far_Note1.setBounds(785, 313, 1109, 14);
+		FWRP.getContentPane().add(Shotgun_ES_Far_Note1);
+		
+		Shotgun_ES_Far_Note2.setBounds(785, 325, 1109, 14);
+		FWRP.getContentPane().add(Shotgun_ES_Far_Note2);
+		
+		Shotgun_ES_Far_Note3.setBounds(785, 337, 747, 14);
+		FWRP.getContentPane().add(Shotgun_ES_Far_Note3);
+		
+		Shotgun_ES_Rays_Note.setBounds(785, 349, 1109, 14);
+		FWRP.getContentPane().add(Shotgun_ES_Rays_Note);
+		// EXPLINATIONS
+		
 		
 		// JCOMBO BOX GROUP
 		WC.setMaximumRowCount(10);
@@ -282,6 +661,27 @@ public class WRP {
 		WCB_SubmachineGun.setMaximumRowCount(25);
 		WCB_SubmachineGun.setBounds(10, 76, 201, 22);
 		FWRP.getContentPane().add(WCB_SubmachineGun);
+		
+		JComboBox CSTE = new JComboBox();
+		CSTE.setToolTipText("True or False.");
+		CSTE.setModel(new DefaultComboBoxModel(new String[] {"", "true", "false"}));
+		CSTE.setMaximumRowCount(3);
+		CSTE.setBounds(459, 190, 101, 22);
+		FWRP.getContentPane().add(CSTE);
+		
+		JComboBox CSTW = new JComboBox();
+		CSTW.setToolTipText("True or False.");
+		CSTW.setModel(new DefaultComboBoxModel(new String[] {"", "true", "false"}));
+		CSTW.setMaximumRowCount(3);
+		CSTW.setBounds(459, 210, 101, 22);
+		FWRP.getContentPane().add(CSTW);
+		
+		JComboBox CSTS = new JComboBox();
+		CSTS.setToolTipText("True or False.");
+		CSTS.setModel(new DefaultComboBoxModel(new String[] {"", "true", "false"}));
+		CSTS.setMaximumRowCount(3);
+		CSTS.setBounds(459, 230, 101, 22);
+		FWRP.getContentPane().add(CSTS);
 		// JCOMBO BOX GROUP
 		
 		// JBUTTON GROUP
@@ -291,8 +691,12 @@ public class WRP {
 		Change_Weapon.setBounds(221, 76, 187, 23);
 		FWRP.getContentPane().add(Change_Weapon);
 		
-		Change_Weapon_Stats.setBounds(10, 467, 187, 23);
+		Change_Weapon_Stats.setBounds(10, 423, 187, 23);
 		FWRP.getContentPane().add(Change_Weapon_Stats);
+		
+		JButton Change_Weapon_Stats_Shotgun = new JButton("Change Weapon");
+		Change_Weapon_Stats_Shotgun.setBounds(10, 423, 187, 23);
+		FWRP.getContentPane().add(Change_Weapon_Stats_Shotgun);
 		// JBUTTON GROUP
 		
 		Output.setBounds(10, 631, 399, 399);
@@ -311,6 +715,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(false);
 					WCB_SpecialSecondary.setVisible(false);
 					WCB_SubmachineGun.setVisible(false);
+					//Shotgun stuff
+					Change_Weapon_Stats.setVisible(true);
+					Change_Weapon_Stats_Shotgun.setVisible(false);
+					Shotgun_Exclusive_Stats.setVisible(false);
+					Shotgun_ES_Near.setVisible(false);
+					Shotgun_ES_Far.setVisible(false);
+					Shotgun_ES_rays.setVisible(false);
+					Shotgun_ES_Far_Note1.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note3.setVisible(false);
+					Shotgun_ES_Near_Note.setVisible(false);
+					Shotgun_ES_Rays_Note.setVisible(false);
+					Shotgun_DMG_Near.setVisible(false);
+					Shotgun_DMG_Far.setVisible(false);
+					Shotgun_Rays.setVisible(false);
+					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Assault Rifle")) {
 					WCB_Akimbo.setVisible(false);
 					WCB_AssaultRifle.setVisible(true);
@@ -322,6 +743,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(false);
 					WCB_SpecialSecondary.setVisible(false);
 					WCB_SubmachineGun.setVisible(false);
+					//Shotgun stuff
+					Change_Weapon_Stats.setVisible(true);
+					Change_Weapon_Stats_Shotgun.setVisible(false);
+					Shotgun_Exclusive_Stats.setVisible(false);
+					Shotgun_ES_Near.setVisible(false);
+					Shotgun_ES_Far.setVisible(false);
+					Shotgun_ES_rays.setVisible(false);
+					Shotgun_ES_Far_Note1.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note3.setVisible(false);
+					Shotgun_ES_Near_Note.setVisible(false);
+					Shotgun_ES_Rays_Note.setVisible(false);
+					Shotgun_DMG_Near.setVisible(false);
+					Shotgun_DMG_Far.setVisible(false);
+					Shotgun_Rays.setVisible(false);
+					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Light Machine Gun")) {
 					WCB_Akimbo.setVisible(false);
 					WCB_AssaultRifle.setVisible(false);
@@ -333,6 +771,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(false);
 					WCB_SpecialSecondary.setVisible(false);
 					WCB_SubmachineGun.setVisible(false);
+					//Shotgun stuff
+					Change_Weapon_Stats.setVisible(true);
+					Change_Weapon_Stats_Shotgun.setVisible(false);
+					Shotgun_Exclusive_Stats.setVisible(false);
+					Shotgun_ES_Near.setVisible(false);
+					Shotgun_ES_Far.setVisible(false);
+					Shotgun_ES_rays.setVisible(false);
+					Shotgun_ES_Far_Note1.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note3.setVisible(false);
+					Shotgun_ES_Near_Note.setVisible(false);
+					Shotgun_ES_Rays_Note.setVisible(false);
+					Shotgun_DMG_Near.setVisible(false);
+					Shotgun_DMG_Far.setVisible(false);
+					Shotgun_Rays.setVisible(false);
+					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Pistol")) {
 					WCB_Akimbo.setVisible(false);
 					WCB_AssaultRifle.setVisible(false);
@@ -344,6 +799,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(false);
 					WCB_SpecialSecondary.setVisible(false);
 					WCB_SubmachineGun.setVisible(false);
+					//Shotgun stuff
+					Change_Weapon_Stats.setVisible(true);
+					Change_Weapon_Stats_Shotgun.setVisible(false);
+					Shotgun_Exclusive_Stats.setVisible(false);
+					Shotgun_ES_Near.setVisible(false);
+					Shotgun_ES_Far.setVisible(false);
+					Shotgun_ES_rays.setVisible(false);
+					Shotgun_ES_Far_Note1.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note3.setVisible(false);
+					Shotgun_ES_Near_Note.setVisible(false);
+					Shotgun_ES_Rays_Note.setVisible(false);
+					Shotgun_DMG_Near.setVisible(false);
+					Shotgun_DMG_Far.setVisible(false);
+					Shotgun_Rays.setVisible(false);
+					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Shotgun Primary")) {
 					WCB_Akimbo.setVisible(false);
 					WCB_AssaultRifle.setVisible(false);
@@ -355,6 +827,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(false);
 					WCB_SpecialSecondary.setVisible(false);
 					WCB_SubmachineGun.setVisible(false);
+					// Shotgun Stuff
+					Change_Weapon_Stats.setVisible(false);
+					Change_Weapon_Stats_Shotgun.setVisible(true);
+					Shotgun_Exclusive_Stats.setVisible(true);
+					Shotgun_ES_Near.setVisible(true);
+					Shotgun_ES_Far.setVisible(true);
+					Shotgun_ES_rays.setVisible(true);
+					Shotgun_ES_Far_Note1.setVisible(true);
+					Shotgun_ES_Far_Note2.setVisible(true);
+					Shotgun_ES_Far_Note2.setVisible(true);
+					Shotgun_ES_Far_Note3.setVisible(true);
+					Shotgun_ES_Near_Note.setVisible(true);
+					Shotgun_ES_Rays_Note.setVisible(true);
+					Shotgun_DMG_Near.setVisible(true);
+					Shotgun_DMG_Far.setVisible(true);
+					Shotgun_Rays.setVisible(true);
+					// Shotgun Stuff
 				} else if (WC.getSelectedItem().toString().contains("Shotgun Secondary")) {
 					WCB_Akimbo.setVisible(false);
 					WCB_AssaultRifle.setVisible(false);
@@ -366,6 +855,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(false);
 					WCB_SpecialSecondary.setVisible(false);
 					WCB_SubmachineGun.setVisible(false);
+					// Shotgun Stuff
+					Change_Weapon_Stats.setVisible(false);
+					Change_Weapon_Stats_Shotgun.setVisible(true);
+					Shotgun_Exclusive_Stats.setVisible(true);
+					Shotgun_ES_Near.setVisible(true);
+					Shotgun_ES_Far.setVisible(true);
+					Shotgun_ES_rays.setVisible(true);
+					Shotgun_ES_Far_Note1.setVisible(true);
+					Shotgun_ES_Far_Note2.setVisible(true);
+					Shotgun_ES_Far_Note2.setVisible(true);
+					Shotgun_ES_Far_Note3.setVisible(true);
+					Shotgun_ES_Near_Note.setVisible(true);
+					Shotgun_ES_Rays_Note.setVisible(true);
+					Shotgun_DMG_Near.setVisible(true);
+					Shotgun_DMG_Far.setVisible(true);
+					Shotgun_Rays.setVisible(true);
+					// Shotgun Stuff
 				} else if (WC.getSelectedItem().toString().contains("Sniper Rifle")) {
 					WCB_Akimbo.setVisible(false);
 					WCB_AssaultRifle.setVisible(false);
@@ -377,6 +883,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(false);
 					WCB_SpecialSecondary.setVisible(false);
 					WCB_SubmachineGun.setVisible(false);
+					//Shotgun stuff
+					Change_Weapon_Stats.setVisible(true);
+					Change_Weapon_Stats_Shotgun.setVisible(false);
+					Shotgun_Exclusive_Stats.setVisible(false);
+					Shotgun_ES_Near.setVisible(false);
+					Shotgun_ES_Far.setVisible(false);
+					Shotgun_ES_rays.setVisible(false);
+					Shotgun_ES_Far_Note1.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note3.setVisible(false);
+					Shotgun_ES_Near_Note.setVisible(false);
+					Shotgun_ES_Rays_Note.setVisible(false);
+					Shotgun_DMG_Near.setVisible(false);
+					Shotgun_DMG_Far.setVisible(false);
+					Shotgun_Rays.setVisible(false);
+					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Special Primary")) {
 					WCB_Akimbo.setVisible(false);
 					WCB_AssaultRifle.setVisible(false);
@@ -388,6 +911,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(true);
 					WCB_SpecialSecondary.setVisible(false);
 					WCB_SubmachineGun.setVisible(false);
+					//Shotgun stuff
+					Change_Weapon_Stats.setVisible(true);
+					Change_Weapon_Stats_Shotgun.setVisible(false);
+					Shotgun_Exclusive_Stats.setVisible(false);
+					Shotgun_ES_Near.setVisible(false);
+					Shotgun_ES_Far.setVisible(false);
+					Shotgun_ES_rays.setVisible(false);
+					Shotgun_ES_Far_Note1.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note3.setVisible(false);
+					Shotgun_ES_Near_Note.setVisible(false);
+					Shotgun_ES_Rays_Note.setVisible(false);
+					Shotgun_DMG_Near.setVisible(false);
+					Shotgun_DMG_Far.setVisible(false);
+					Shotgun_Rays.setVisible(false);
+					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Special Secondary")) {
 					WCB_Akimbo.setVisible(false);
 					WCB_AssaultRifle.setVisible(false);
@@ -399,6 +939,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(false);
 					WCB_SpecialSecondary.setVisible(true);
 					WCB_SubmachineGun.setVisible(false);
+					//Shotgun stuff
+					Change_Weapon_Stats.setVisible(true);
+					Change_Weapon_Stats_Shotgun.setVisible(false);
+					Shotgun_Exclusive_Stats.setVisible(false);
+					Shotgun_ES_Near.setVisible(false);
+					Shotgun_ES_Far.setVisible(false);
+					Shotgun_ES_rays.setVisible(false);
+					Shotgun_ES_Far_Note1.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note3.setVisible(false);
+					Shotgun_ES_Near_Note.setVisible(false);
+					Shotgun_ES_Rays_Note.setVisible(false);
+					Shotgun_DMG_Near.setVisible(false);
+					Shotgun_DMG_Far.setVisible(false);
+					Shotgun_Rays.setVisible(false);
+					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Submachine Gun")) {
 					WCB_Akimbo.setVisible(false);
 					WCB_AssaultRifle.setVisible(false);
@@ -410,6 +967,23 @@ public class WRP {
 					WCB_SpecialPrimary.setVisible(false);
 					WCB_SpecialSecondary.setVisible(false);
 					WCB_SubmachineGun.setVisible(true);
+					//Shotgun stuff
+					Change_Weapon_Stats.setVisible(true);
+					Change_Weapon_Stats_Shotgun.setVisible(false);
+					Shotgun_Exclusive_Stats.setVisible(false);
+					Shotgun_ES_Near.setVisible(false);
+					Shotgun_ES_Far.setVisible(false);
+					Shotgun_ES_rays.setVisible(false);
+					Shotgun_ES_Far_Note1.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note2.setVisible(false);
+					Shotgun_ES_Far_Note3.setVisible(false);
+					Shotgun_ES_Near_Note.setVisible(false);
+					Shotgun_ES_Rays_Note.setVisible(false);
+					Shotgun_DMG_Near.setVisible(false);
+					Shotgun_DMG_Far.setVisible(false);
+					Shotgun_Rays.setVisible(false);
+					//Shotgun stuff
 				}
 			}
 		});
@@ -617,7 +1191,7 @@ public class WRP {
 		
 		Change_Weapon_Stats.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Output.setText("Displayed stats" + "\n" +
+				Output.setText("--Displayed stats" + "\n" +
 							   "self."+ ID.getText() + ".CLIP_AMMO_MAX = "+ CAM.getText() + "\n" +
 						       "self."+ ID.getText() + ".fire_mode_data.fire_rate = 60 / "+ FR.getText() + "\n" +
 						       "self."+ ID.getText() + ".stats.damage = "+ DMG.getText() + "\n" +
@@ -627,14 +1201,43 @@ public class WRP {
 						       "self."+ ID.getText() + ".stats.concealment = "+ CON.getValue() + "\n" +
 						       "self."+ ID.getText() + ".stats.reload = "+ RS.getValue() + "\n" +
 						       "\n" +
-						       "Hidden stats" + "\n" +
-							   "self."+ ID.getText() + ".stats_modifiers = {damage = "+ CAM.getText() + "}" + "\n" +
-						       "self."+ ID.getText() + ".AMMO_PICKUP = {"+ CAM.getText() +"," + CAM.getText() + "}"  + "\n" +
-						       "self."+ ID.getText() + ".can_shoot_through_enemy = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".can_shoot_through_wall = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".can_shoot_through_shield = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".armor_piercing_chance = "+ CAM.getText() + "\n" +
-						       "self."+ ID.getText() + ".stats.alert_size = "+ CAM.getText() + "\n"
+						       "--Hidden stats" + "\n" +
+							   "self."+ ID.getText() + ".stats_modifiers = {damage = "+ SM_DM.getText() + "}" + "\n" +
+						       "self."+ ID.getText() + ".AMMO_PICKUP = {"+ AP_Min.getText() +"," + AP_Max.getText() + "}"  + "\n" +
+						       "self."+ ID.getText() + ".can_shoot_through_enemy = "+ CSTE.getSelectedItem().toString() + "\n" +
+						       "self."+ ID.getText() + ".can_shoot_through_wall = "+ CSTW.getSelectedItem().toString() + "\n" +
+						       "self."+ ID.getText() + ".can_shoot_through_shield = "+ CSTS.getSelectedItem().toString() + "\n" +
+						       "self."+ ID.getText() + ".armor_piercing_chance = "+ APC.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.alert_size = "+ AS.getValue() + "\n"
+							  );
+			}
+		});
+		
+		Change_Weapon_Stats_Shotgun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Output.setText("--Displayed stats" + "\n" +
+							   "self."+ ID.getText() + ".CLIP_AMMO_MAX = "+ CAM.getText() + "\n" +
+						       "self."+ ID.getText() + ".fire_mode_data.fire_rate = 60 / "+ FR.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.damage = "+ DMG.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.spread = "+ SPR.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.recoil = "+ RCL.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.suppression = "+ SUP.getValue() + "\n" +
+						       "self."+ ID.getText() + ".stats.concealment = "+ CON.getValue() + "\n" +
+						       "self."+ ID.getText() + ".stats.reload = "+ RS.getValue() + "\n" +
+						       "\n" +
+						       "--Hidden stats" + "\n" +
+							   "self."+ ID.getText() + ".stats_modifiers = {damage = "+ SM_DM.getText() + "}" + "\n" +
+						       "self."+ ID.getText() + ".AMMO_PICKUP = {"+ AP_Min.getText() +"," + AP_Max.getText() + "}"  + "\n" +
+						       "self."+ ID.getText() + ".can_shoot_through_enemy = "+ CSTE.getSelectedItem().toString() + "\n" +
+						       "self."+ ID.getText() + ".can_shoot_through_wall = "+ CSTW.getSelectedItem().toString() + "\n" +
+						       "self."+ ID.getText() + ".can_shoot_through_shield = "+ CSTS.getSelectedItem().toString() + "\n" +
+						       "self."+ ID.getText() + ".armor_piercing_chance = "+ APC.getText() + "\n" +
+						       "self."+ ID.getText() + ".stats.alert_size = "+ AS.getValue() + "\n" +
+						       "\n" +
+						       "--Shotgun Exclusive Stats" + "\n" +
+							   "self."+ ID.getText() + ".damage_near = "+ Shotgun_DMG_Near.getText() + "\n" +
+						       "self."+ ID.getText() + ".damage_far = "+ Shotgun_DMG_Far.getText() + "\n" +
+						       "self."+ ID.getText() + ".rays = "+ Shotgun_Rays.getText() + "\n"
 							  );
 			}
 		});
