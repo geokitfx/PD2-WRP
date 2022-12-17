@@ -642,7 +642,7 @@ public class WRP {
 		WCB_ShotgunSecondary.setBounds(10, 76, 201, 22);
 		FWRP.getContentPane().add(WCB_ShotgunSecondary);
 		
-		WCB_SniperRifle.setModel(new DefaultComboBoxModel(new String[] {"Contractor .308", "Desertfox", "Grom", "Lebensauger .308", "Nagant", "Platypus 70", "R93", "Rattlesnake", "Repeater 1874", "Thanatos .50 cal", "R700", "Bernetti Rangehitter Sniper Rifle", "K\u00E1ng Arms X1", "Pronghorn", "North star sniper rifle"}));
+		WCB_SniperRifle.setModel(new DefaultComboBoxModel(new String[] {"Contractor .308", "Desertfox", "Grom", "Lebensauger .308", "Nagant", "Platypus 70", "R93", "Rattlesnake", "Repeater 1874", "Thanatos .50 cal", "R700", "Bernetti Rangehitter Sniper Rifle", "K\u00E1ng Arms X1", "Pronghorn", "North Star Sniper Rifle"}));
 		WCB_SniperRifle.setMaximumRowCount(15);
 		WCB_SniperRifle.setBounds(10, 76, 201, 22);
 		FWRP.getContentPane().add(WCB_SniperRifle);
@@ -1483,7 +1483,7 @@ public class WRP {
 						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Pronghorn")) {
 							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
 							ID.setText("scout");
-						}  else if (WCB_SniperRifle.getSelectedItem().toString().contains("North star sniper rifle")) {
+						}  else if (WCB_SniperRifle.getSelectedItem().toString().contains("North Star Sniper Rifle")) {
 							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
 							ID.setText("victor");
 						}
