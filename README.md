@@ -8,3 +8,5 @@ I made this with
 "Weapon Rebalance Template"
 By Croveaux
 https://modworkshop.net/mod/27051
+
+Demo Video: https://youtu.be/CMUyG5EodX0
