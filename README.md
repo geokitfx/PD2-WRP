@@ -12,3 +12,7 @@ https://modworkshop.net/mod/27051
 Demo Video: https://youtu.be/CMUyG5EodX0
 
 Requires Java 15.0.1
+
+REQUIRES SUPERBLT
+SOME FEATURES REQUIRE WEAPONLIB OR AFSF
+PUT FINISHED MOD INTO 'MODS'
