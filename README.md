@@ -10,3 +10,5 @@ By Croveaux
 https://modworkshop.net/mod/27051
 
 Demo Video: https://youtu.be/CMUyG5EodX0
+
+Requires Java 15.0.1
