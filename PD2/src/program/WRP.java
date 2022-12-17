@@ -253,7 +253,7 @@ public class WRP {
 		FWRP.getContentPane().add(FR);
 		
 		DMG = new JTextField();
-		DMG.setToolTipText("Damage, the maximum vanilla value is 210. \r\nSome weapons, however, mostly sniper rifles and explosives, have a damage multiplier that enables them to raise the damage above 210. \r\nRemember to factor it in if you choose to rebalance these. \r\nAdditionally, changing this stat won't affect the actual damage dealt by explosives. \r\nIn their case, the damage stat exists only for display, and the actual damage is handled by the projectile.");
+		DMG.setToolTipText("");
 		DMG.setColumns(10);
 		DMG.setBounds(110, 210, 124, 20);
 		FWRP.getContentPane().add(DMG);
