@@ -78,7 +78,7 @@ public class WRP {
 		JComboBox WCB_SubmachineGun = new JComboBox();
 		JButton Change_Weapon_Category = new JButton("Change Weapon Category");
 		JButton Change_Weapon = new JButton("Change Weapon");
-		JLabel WPN_test = new JLabel("Weapon Test");
+		JLabel WPN_test = new JLabel("Weapon Name Place Holder");
 		JLabel WPN_Name = new JLabel("Weapon Name:");
 		JLabel ID = new JLabel("ID");
 		JTextPane Output = new JTextPane();
@@ -86,7 +86,7 @@ public class WRP {
 		Output.setBackground(Color.DARK_GRAY);
 		Output.setFont(new Font("Arial", Font.PLAIN, 12));
 		Output.setEditable(false);
-		JButton Change_Weapon_Stats = new JButton("Change Weapon");
+		JButton Change_Weapon_Stats = new JButton("Commit Weapon Change");
 		
 		JLabel Shotgun_Exclusive_Stats = new JLabel("Shotgun Exclusive Stats");
 		JLabel Shotgun_ES_Near = new JLabel("Damage Near:");
@@ -694,7 +694,7 @@ public class WRP {
 		Change_Weapon_Stats.setBounds(10, 423, 187, 23);
 		FWRP.getContentPane().add(Change_Weapon_Stats);
 		
-		JButton Change_Weapon_Stats_Shotgun = new JButton("Change Weapon");
+		JButton Change_Weapon_Stats_Shotgun = new JButton("Commit Weapon Change");
 		Change_Weapon_Stats_Shotgun.setBounds(10, 423, 187, 23);
 		FWRP.getContentPane().add(Change_Weapon_Stats_Shotgun);
 		// JBUTTON GROUP
@@ -1166,25 +1166,468 @@ public class WRP {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
 						ID.setText("x_sko12");
 					}
-
 				} else if (WC.getSelectedItem().toString().contains("Assault Rifle")) {
-
+					 if (WCB_AssaultRifle.getSelectedItem().toString().contains("AK")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("ak74");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("AK.762")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("akm");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("AK5")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("ak5");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("AK17")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("flint");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("AMCAR")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("amcar");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("AMR-16")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("m16");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Bootleg")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("tecci");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("CAR-4")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("new_m4");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Cavity 9mm")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("sub2000");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Clarion")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("famas");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Commando 553")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("s552");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Eagle Heavy")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("scar");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Falcon")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("fal");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Galant")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("ching");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Gecko 7.62")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("galil");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Gewehr 3")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("g3");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Golden AK.762")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("akm_gold");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("JP36")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("g36");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Little Friend 7.62")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("contraband");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Lion's Roar")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("vhs");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("M308")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("new_m14");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Queen's Wrath")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("l85a2");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("UAR")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("aug");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Union 5.56")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("corgi");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Valkyria")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("asval");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Tempest 21")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("komodo");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("Ketchnov Byk-1")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("groza");
+						} else if (WCB_AssaultRifle.getSelectedItem().toString().contains("KS12 Urban")) {
+							WPN_test.setText(WCB_AssaultRifle.getSelectedItem().toString());
+							ID.setText("shak12");
+						}
 				} else if (WC.getSelectedItem().toString().contains("Light Machine Gun")) {
-
+					if (WCB_LightMachineGun.getSelectedItem().toString().contains("Brenner-21")) {
+						WPN_test.setText(WCB_LightMachineGun.getSelectedItem().toString());
+						ID.setText("hk21");
+					} else if (WCB_LightMachineGun.getSelectedItem().toString().contains("Buzzsaw 42")) {
+						WPN_test.setText(WCB_LightMachineGun.getSelectedItem().toString());
+						ID.setText("mg42");
+					} else if (WCB_LightMachineGun.getSelectedItem().toString().contains("KSP")) {
+						WPN_test.setText(WCB_LightMachineGun.getSelectedItem().toString());
+						ID.setText("m249");
+					} else if (WCB_LightMachineGun.getSelectedItem().toString().contains("KSP 58")) {
+						WPN_test.setText(WCB_LightMachineGun.getSelectedItem().toString());
+						ID.setText("par");
+					} else if (WCB_LightMachineGun.getSelectedItem().toString().contains("RPK")) {
+						WPN_test.setText(WCB_LightMachineGun.getSelectedItem().toString());
+						ID.setText("rpk");
+					} else if (WCB_LightMachineGun.getSelectedItem().toString().contains("M60")) {
+						WPN_test.setText(WCB_LightMachineGun.getSelectedItem().toString());
+						ID.setText("m60");
+					} else if (WCB_LightMachineGun.getSelectedItem().toString().contains("SG Versteckt 51D")) {
+						WPN_test.setText(WCB_LightMachineGun.getSelectedItem().toString());
+						ID.setText("hk51b");
+					}
 				} else if (WC.getSelectedItem().toString().contains("Pistol")) {
-
+					if (WCB_Pistol.getSelectedItem().toString().contains("5/7")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("lemming");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Baby Deagle")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("sparrow");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Bernetti 9")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("b92fs");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Bronco .44")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("new_raging_bull");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Broomstick")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("c96");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Castigo .44")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("chinchilla");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Chimano 88")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("glock_17");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Chimano Compact")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("g26");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Chimano Custom")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("g22c");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Contractor")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("packrat");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Crosskill")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("colt_1911");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Crosskill Guard")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("shrew");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Deagle")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("deagle");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Gruber Kurz")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("ppk");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Interceptor 45")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("usp");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("LEO")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("hs2000");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Matever .357")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("mateba");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Parabellum")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("breech");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Peacemaker .45")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("peacemaker");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Signature .40")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("p226");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("STRYK 18c")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("glock_18c");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("White Streak")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("pl14");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("M13 9mm")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("legacy");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Bernetti Auto Pistol")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("beer");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Czech 92 Pistol")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("czech");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Igor Automatik Pistol")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("stech");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Holt 9 mm Pistol")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("holt");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Frenchman Model 87 Revolver")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("model3");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Crosskill Chunky Compact Pistol")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("m1911");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Káng Arms Model 54")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("type54");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("RUS-12 Angry Tiger")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("rsh12");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Gecko M2")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("maxim9");
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("Kahn .357")) {
+						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
+						ID.setText("korth");
+					}
 				} else if (WC.getSelectedItem().toString().contains("Shotgun Primary")) {
-
+					if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("Breaker 12G")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("boot");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("IZHMA 12G")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("saiga");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("Joceline O/U 12G")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("b682");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("M1014")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("benelli");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("Mosconi 12G")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("huntsman");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("Predator 12G")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("spas12");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("Raven")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("ksg");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("Reinfeld 880")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("r870");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("Steakout 12G")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("aa12");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("Reinfeld 88 Shotgun")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("m1897");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("Mosconi 12G Tactical Shotgun")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("m590");
+					} else if (WCB_ShotgunPrimary.getSelectedItem().toString().contains("VD-12")) {
+						WPN_test.setText(WCB_ShotgunPrimary.getSelectedItem().toString());
+						ID.setText("sko12");
+					}
 				} else if (WC.getSelectedItem().toString().contains("Shotgun Secondary")) {
-
+					if (WCB_ShotgunSecondary.getSelectedItem().toString().contains("Grimm 12G")) {
+						WPN_test.setText(WCB_ShotgunSecondary.getSelectedItem().toString());
+						ID.setText("basset");
+					} else if (WCB_ShotgunSecondary.getSelectedItem().toString().contains("GSPS 12G")) {
+						WPN_test.setText(WCB_ShotgunSecondary.getSelectedItem().toString());
+						ID.setText("m37");
+					} else if (WCB_ShotgunSecondary.getSelectedItem().toString().contains("Goliath 12G")) {
+						WPN_test.setText(WCB_ShotgunSecondary.getSelectedItem().toString());
+						ID.setText("rota");
+					} else if (WCB_ShotgunSecondary.getSelectedItem().toString().contains("Locomotive 12G")) {
+						WPN_test.setText(WCB_ShotgunSecondary.getSelectedItem().toString());
+						ID.setText("serbu");
+					} else if (WCB_ShotgunSecondary.getSelectedItem().toString().contains("Street Sweeper")) {
+						WPN_test.setText(WCB_ShotgunSecondary.getSelectedItem().toString());
+						ID.setText("striker");
+					} else if (WCB_ShotgunSecondary.getSelectedItem().toString().contains("The Judge")) {
+						WPN_test.setText(WCB_ShotgunSecondary.getSelectedItem().toString());
+						ID.setText("judge");
+					} else if (WCB_ShotgunSecondary.getSelectedItem().toString().contains("Claire 12G")) {
+						WPN_test.setText(WCB_ShotgunSecondary.getSelectedItem().toString());
+						ID.setText("coach");
+					} else if (WCB_ShotgunSecondary.getSelectedItem().toString().contains("Argos III")) {
+						WPN_test.setText(WCB_ShotgunSecondary.getSelectedItem().toString());
+						ID.setText("ultima");
+					}
 				} else if (WC.getSelectedItem().toString().contains("Sniper Rifle")) {
-
+					 if (WCB_SniperRifle.getSelectedItem().toString().contains("Contractor .308")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("tti");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Desertfox")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("desertfox");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Grom")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("siltstone");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Lebensauger .308")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("wa2000");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Nagant")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("mosin");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Platypus 70")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("model70");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("R93")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("r93");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Rattlesnake")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("msr");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Repeater 1874")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("winchester1874");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Thanatos .50 cal")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("m95");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("R700")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("r700");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Bernetti Rangehitter Sniper Rifle")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("sbl");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Káng Arms X1")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("qbu88");
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Pronghorn")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("scout");
+						}
 				} else if (WC.getSelectedItem().toString().contains("Special Primary")) {
-
+					if (WCB_SpecialPrimary.getSelectedItem().toString().contains("Airbow")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("ecp");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("English Longbow")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("long");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("Flamethrower Mk. 1")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("flamethrower_mk2");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("GL40 Grenade Launcher")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("gre_m79");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("Heavy Crossbow")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("arblast");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("Light Crossbow")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("frankish");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("OVE9000 Saw")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("saw");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("Piglet Grenade Launcher")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("m32");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("Plainsrider Bow")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("plainsrider");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("Vulcan Minigun")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("m134");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("XL 5.56 Microgun")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("shuno");
+					} else if (WCB_SpecialPrimary.getSelectedItem().toString().contains("Hailstorm Mk 5")) {
+						WPN_test.setText(WCB_SpecialPrimary.getSelectedItem().toString());
+						ID.setText("hailstorm");
+					}
 				} else if (WC.getSelectedItem().toString().contains("Special Secondary")) {
-
+					 if (WCB_SpecialSecondary.getSelectedItem().toString().contains("Arbiter Grenade launcher")) {
+							WPN_test.setText(WCB_SpecialSecondary.getSelectedItem().toString());
+							ID.setText("arbiter");
+						} else if (WCB_SpecialSecondary.getSelectedItem().toString().contains("China Puff 40mm Grenade Launcher")) {
+							WPN_test.setText(WCB_SpecialSecondary.getSelectedItem().toString());
+							ID.setText("china");
+						} else if (WCB_SpecialSecondary.getSelectedItem().toString().contains("Commando 101 Rocket Launcher")) {
+							WPN_test.setText(WCB_SpecialSecondary.getSelectedItem().toString());
+							ID.setText("ray");
+						} else if (WCB_SpecialSecondary.getSelectedItem().toString().contains("Compact 40mm Grenade Launcher")) {
+							WPN_test.setText(WCB_SpecialSecondary.getSelectedItem().toString());
+							ID.setText("slap");
+						} else if (WCB_SpecialSecondary.getSelectedItem().toString().contains("HRL-7 Rocket Launcher")) {
+							WPN_test.setText(WCB_SpecialSecondary.getSelectedItem().toString());
+							ID.setText("rpg7");
+						} else if (WCB_SpecialSecondary.getSelectedItem().toString().contains("OVE9000 Saw")) {
+							WPN_test.setText(WCB_SpecialSecondary.getSelectedItem().toString());
+							ID.setText("saw_secondary");
+						} else if (WCB_SpecialSecondary.getSelectedItem().toString().contains("Pistol Crossbow")) {
+							WPN_test.setText(WCB_SpecialSecondary.getSelectedItem().toString());
+							ID.setText("hunter");
+						} else if (WCB_SpecialSecondary.getSelectedItem().toString().contains("MA-17 Flamethrower")) {
+							WPN_test.setText(WCB_SpecialSecondary.getSelectedItem().toString());
+							ID.setText("system");
+						} else if (WCB_SpecialSecondary.getSelectedItem().toString().contains("Basilisk 3V")) {
+							WPN_test.setText(WCB_SpecialSecondary.getSelectedItem().toString());
+							ID.setText("ms3gl");
+						}
 				} else if (WC.getSelectedItem().toString().contains("Submachine Gun")) {
-
+					 if (WCB_SubmachineGun.getSelectedItem().toString().contains("Blaster 9mm")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("tec9");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Chicago Typewriter")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("m1928");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("CMP")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("mp9");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Cobra")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("scorpion");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Compact-5")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("new_mp5");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("CR 805B")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("hajk");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Heather")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("sr2");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Jackal")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("schakal");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Jacket's Piece")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("cobray");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Kobus 90")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("p90");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Krinkov")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("akmsu");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Kross Vertex")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("polymer");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Mark 10")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("mac10");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Micro Uzi")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("baka");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("MP40")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("erma");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Para")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("olympic");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Patchett L2A1")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("sterling");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("SpecOps")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("mp7");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Swedish K")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("m45");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Tatonka")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("coal");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Uzi")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("uzi");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Signature")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("shepheard");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("AK Gen 21 Tactical")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("vityaz");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Miyaka 10 Special")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("pm9");
+						} else if (WCB_SubmachineGun.getSelectedItem().toString().contains("Wasp-DS")) {
+							WPN_test.setText(WCB_SubmachineGun.getSelectedItem().toString());
+							ID.setText("fmg9");
+						}
 				}
 			}
 		});
@@ -1247,4 +1690,3 @@ public class WRP {
 
 /*
  */
-
