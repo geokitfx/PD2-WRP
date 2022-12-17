@@ -642,8 +642,8 @@ public class WRP {
 		WCB_ShotgunSecondary.setBounds(10, 76, 201, 22);
 		FWRP.getContentPane().add(WCB_ShotgunSecondary);
 		
-		WCB_SniperRifle.setModel(new DefaultComboBoxModel(new String[] {"Contractor .308", "Desertfox", "Grom", "Lebensauger .308", "Nagant", "Platypus 70", "R93", "Rattlesnake", "Repeater 1874", "Thanatos .50 cal", "R700", "Bernetti Rangehitter Sniper Rifle", "K\u00E1ng Arms X1", "Pronghorn"}));
-		WCB_SniperRifle.setMaximumRowCount(14);
+		WCB_SniperRifle.setModel(new DefaultComboBoxModel(new String[] {"Contractor .308", "Desertfox", "Grom", "Lebensauger .308", "Nagant", "Platypus 70", "R93", "Rattlesnake", "Repeater 1874", "Thanatos .50 cal", "R700", "Bernetti Rangehitter Sniper Rifle", "K\u00E1ng Arms X1", "Pronghorn", "North star sniper rifle"}));
+		WCB_SniperRifle.setMaximumRowCount(15);
 		WCB_SniperRifle.setBounds(10, 76, 201, 22);
 		FWRP.getContentPane().add(WCB_SniperRifle);
 		
@@ -1153,7 +1153,7 @@ public class WRP {
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Miyaka 10 Special")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
 						ID.setText("x_pm9");
-					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Káng Arms Model 54")) {
+					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo KÃ¡ng Arms Model 54")) {
 						WPN_test.setText(WCB_Akimbo.getSelectedItem().toString());
 						ID.setText("x_type54");
 					} else if (WCB_Akimbo.getSelectedItem().toString().contains("Akimbo Gecko M2")) {
@@ -1363,7 +1363,7 @@ public class WRP {
 					} else if (WCB_Pistol.getSelectedItem().toString().contains("Crosskill Chunky Compact Pistol")) {
 						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
 						ID.setText("m1911");
-					} else if (WCB_Pistol.getSelectedItem().toString().contains("Káng Arms Model 54")) {
+					} else if (WCB_Pistol.getSelectedItem().toString().contains("KÃ¡ng Arms Model 54")) {
 						WPN_test.setText(WCB_Pistol.getSelectedItem().toString());
 						ID.setText("type54");
 					} else if (WCB_Pistol.getSelectedItem().toString().contains("RUS-12 Angry Tiger")) {
@@ -1477,12 +1477,15 @@ public class WRP {
 						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Bernetti Rangehitter Sniper Rifle")) {
 							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
 							ID.setText("sbl");
-						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Káng Arms X1")) {
+						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("KÃ¡ng Arms X1")) {
 							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
 							ID.setText("qbu88");
 						} else if (WCB_SniperRifle.getSelectedItem().toString().contains("Pronghorn")) {
 							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
 							ID.setText("scout");
+						}  else if (WCB_SniperRifle.getSelectedItem().toString().contains("North star sniper rifle")) {
+							WPN_test.setText(WCB_SniperRifle.getSelectedItem().toString());
+							ID.setText("victor");
 						}
 				} else if (WC.getSelectedItem().toString().contains("Special Primary")) {
 					if (WCB_SpecialPrimary.getSelectedItem().toString().contains("Airbow")) {
