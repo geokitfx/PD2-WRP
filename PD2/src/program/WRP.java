@@ -1639,6 +1639,7 @@ public class WRP {
 			public void actionPerformed(ActionEvent e) {
 				Output.setText("--Displayed stats" + "\n" +
 							   "self."+ ID.getText() + ".CLIP_AMMO_MAX = "+ CAM.getText() + "\n" +
+							   "self."+ ID.getText() + ".AMMO_MAX = "+ AM.getText() + "\n" +
 						       "self."+ ID.getText() + ".fire_mode_data.fire_rate = 60 / "+ FR.getText() + "\n" +
 						       "self."+ ID.getText() + ".stats.damage = "+ DMG.getText() + "\n" +
 						       "self."+ ID.getText() + ".stats.spread = "+ SPR.getText() + "\n" +
@@ -1663,6 +1664,7 @@ public class WRP {
 			public void actionPerformed(ActionEvent e) {
 				Output.setText("--Displayed stats" + "\n" +
 							   "self."+ ID.getText() + ".CLIP_AMMO_MAX = "+ CAM.getText() + "\n" +
+							   "self."+ ID.getText() + ".AMMO_MAX = "+ AM.getText() + "\n" +
 						       "self."+ ID.getText() + ".fire_mode_data.fire_rate = 60 / "+ FR.getText() + "\n" +
 						       "self."+ ID.getText() + ".stats.damage = "+ DMG.getText() + "\n" +
 						       "self."+ ID.getText() + ".stats.spread = "+ SPR.getText() + "\n" +
