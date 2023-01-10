@@ -17,6 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.JSlider;
+import java.awt.SystemColor;
 
 public class WRP {
 
@@ -92,11 +93,8 @@ public class WRP {
 		JLabel Shotgun_ES_Near = new JLabel("Damage Near:");
 		JLabel Shotgun_ES_Far = new JLabel("Damage Far:");
 		JLabel Shotgun_ES_rays = new JLabel("Rays:");
-		JLabel Shotgun_ES_Far_Note1 = new JLabel("The distance from the point where falloff is applied to the point where the damage is no longer applied. for example, if damage_near is 300 and damage_far is 300,");
-		JLabel Shotgun_ES_Far_Note2 = new JLabel("then after 3 meters the damage will start falling off, decreasing gradually with distance, and at 6 meters (300+300=600) the hits will no longer register. ");
-		JLabel Shotgun_ES_Far_Note3 = new JLabel("Applies ONLY to shotguns. by default the value is 5000 for all shotguns.");
-		JLabel Shotgun_ES_Rays_Note = new JLabel("The amount of pellets shot from the gun. each pellet deals full damage, but only one (per enemy) can apply it - so more pellets don't mean more damage, but more chances to hit. applies ONLY to shotguns.");
-		JLabel Shotgun_ES_Near_Note = new JLabel("The distance before any falloff is applied, measured in centimeters (100 = 1m). applies ONLY to shotguns. by default the value is 2000 for all shotguns.");
+		JTextPane ReloadStatExplanation = new JTextPane();
+		JTextPane ShotgunRangeExplination = new JTextPane();
 		Shotgun_DMG_Near = new JTextField();
 		Shotgun_DMG_Far = new JTextField();
 		Shotgun_Rays = new JTextField();
@@ -104,15 +102,10 @@ public class WRP {
 		Shotgun_ES_Near.setVisible(false);
 		Shotgun_ES_Far.setVisible(false);
 		Shotgun_ES_rays.setVisible(false);
-		Shotgun_ES_Far_Note1.setVisible(false);
-		Shotgun_ES_Far_Note2.setVisible(false);
-		Shotgun_ES_Far_Note2.setVisible(false);
-		Shotgun_ES_Far_Note3.setVisible(false);
-		Shotgun_ES_Near_Note.setVisible(false);
-		Shotgun_ES_Rays_Note.setVisible(false);
 		Shotgun_DMG_Near.setVisible(false);
 		Shotgun_DMG_Far.setVisible(false);
 		Shotgun_Rays.setVisible(false);
+		ShotgunRangeExplination.setVisible(false);
 		
 		// ACSSES ALL J THINGS \\
 		
@@ -526,42 +519,6 @@ public class WRP {
 		RSE_21.setBounds(667, 978, 243, 22);
 		FWRP.getContentPane().add(RSE_21);
 		
-		JLabel RSE_E1 = new JLabel("Reload stat explanation: you know it's good when an explanation starts with \"because the devs are stupid\". but,");
-		RSE_E1.setBounds(861, 858, 640, 14);
-		FWRP.getContentPane().add(RSE_E1);
-		
-		JLabel RSE_E2 = new JLabel("because the devs are stupid, reload works in a weird way. it's split up into two things: the reload timers,");
-		RSE_E2.setBounds(861, 874, 577, 14);
-		FWRP.getContentPane().add(RSE_E2);
-		
-		JLabel RSE_E3 = new JLabel("which define how much time passes between the press of a button and the refilling of the magazine, and the animation lenght itself,");
-		RSE_E3.setBounds(861, 890, 671, 14);
-		FWRP.getContentPane().add(RSE_E3);
-		
-		JLabel RSE_E4 = new JLabel("which is not affected by timers. When Overkill introduced speedpull mags, and later decided to rebalance reload times as well,");
-		RSE_E4.setBounds(861, 906, 671, 14);
-		FWRP.getContentPane().add(RSE_E4);
-		
-		JLabel RSE_E5 = new JLabel("they added a third aspect that tied these two together: the reload stat. The reload stat takes the reload timers and the animation lenght and divides them both");
-		RSE_E5.setBounds(861, 922, 806, 14);
-		FWRP.getContentPane().add(RSE_E5);
-		
-		JLabel RSE_E6 = new JLabel("by the same value, so their speed can be changed. 11 corresponds to a value of 1, meaning both are divided by 1 and essentially unchanged.");
-		RSE_E6.setBounds(861, 938, 806, 14);
-		FWRP.getContentPane().add(RSE_E6);
-		
-		JLabel RSE_E7 = new JLabel("Values lower than 11 increment this divisor by 0.05, down to the value of 0.5 at 1. Dividing by half is equal to multiplying by 2, so the reload time is doubled.");
-		RSE_E7.setBounds(861, 954, 806, 14);
-		FWRP.getContentPane().add(RSE_E7);
-		
-		JLabel RSE_E8 = new JLabel("values above 11 increment the divisor by 0.1, up to a value of 2 at 21. Dividing by two halves the reload time.");
-		RSE_E8.setBounds(861, 970, 806, 14);
-		FWRP.getContentPane().add(RSE_E8);
-		
-		JLabel RSE_E9 = new JLabel("Full table To the left, in case you want to be really precise with how you change the reload times.");
-		RSE_E9.setBounds(861, 986, 806, 14);
-		FWRP.getContentPane().add(RSE_E9);
-		
 		JLabel APC_Note = new JLabel("NOTE: 1 for always piercing, 0 for no piercing. can be any value inbetween for a chance of piercing.");
 		APC_Note.setBounds(568, 252, 577, 14);
 		FWRP.getContentPane().add(APC_Note);
@@ -589,21 +546,6 @@ public class WRP {
 		JLabel NFD_6 = new JLabel("In their case, the damage stat exists only for display, and the actual damage is handled by the projectile.");
 		NFD_6.setBounds(459, 86, 726, 14);
 		FWRP.getContentPane().add(NFD_6);
-		
-		Shotgun_ES_Near_Note.setBounds(785, 300, 1109, 14);
-		FWRP.getContentPane().add(Shotgun_ES_Near_Note);
-		
-		Shotgun_ES_Far_Note1.setBounds(785, 313, 1109, 14);
-		FWRP.getContentPane().add(Shotgun_ES_Far_Note1);
-		
-		Shotgun_ES_Far_Note2.setBounds(785, 325, 1109, 14);
-		FWRP.getContentPane().add(Shotgun_ES_Far_Note2);
-		
-		Shotgun_ES_Far_Note3.setBounds(785, 337, 747, 14);
-		FWRP.getContentPane().add(Shotgun_ES_Far_Note3);
-		
-		Shotgun_ES_Rays_Note.setBounds(785, 349, 1109, 14);
-		FWRP.getContentPane().add(Shotgun_ES_Rays_Note);
 		// EXPLINATIONS
 		
 		
@@ -702,6 +644,16 @@ public class WRP {
 		Output.setBounds(10, 631, 399, 399);
 		FWRP.getContentPane().add(Output);
 		
+		ReloadStatExplanation.setText("Reload stat explanation: you know it's good when an explanation starts with \"because the devs are stupid\". \r\nBut, because the devs are stupid, reload works in a weird way. \r\nIt's split up into two things: the reload timers, which define how much time passes between the press of a button and the refilling of the magazine, and the animation lenght itself, which is not affected by timers. \r\nWhen Overkill introduced speedpull mags, and later decided to rebalance reload times as well, they added a third aspect that tied these two together: the reload stat. \r\nThe reload stat takes the reload timers and the animation lenght and divides them both by the same value, so their speed can be changed. \r\n11 corresponds to a value of 1, meaning both are divided by 1 and essentially unchanged. Values lower than 11 increment this divisor by 0.05, down to the value of 0.5 at 1. \r\nDividing by half is equal to multiplying by 2, so the reload time is doubled. values above 11 increment the divisor by 0.1, up to a value of 2 at 21. \r\nDividing by two halves the reload time. full table below, in case you want to be really precise with how you change the reload times.");
+		ReloadStatExplanation.setBackground(SystemColor.control);
+		ReloadStatExplanation.setBounds(920, 631, 862, 369);
+		FWRP.getContentPane().add(ReloadStatExplanation);
+		
+		ShotgunRangeExplination.setText("The distance before any falloff is applied, measured in centimeters (100 = 1m). applies ONLY to shotguns. by default the value is 2000 for all shotguns.\r\nThe distance from the point where falloff is applied to the point where the damage is no longer applied. for example, if damage_near is 300 and damage_far is 300,\r\nthen after 3 meters the damage will start falling off, decreasing gradually with distance, and at 6 meters (300+300=600) the hits will no longer register. \r\nApplies ONLY to shotguns. by default the value is 5000 for all shotguns.\r\nThe amount of pellets shot from the gun. each pellet deals full damage, but only one (per enemy) can apply it - so more pellets don't mean more damage, but more chances to hit. applies ONLY to shotguns.");
+		ShotgunRangeExplination.setBackground(SystemColor.menu);
+		ShotgunRangeExplination.setBounds(851, 275, 783, 287);
+		FWRP.getContentPane().add(ShotgunRangeExplination);
+		
 		Change_Weapon_Category.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (WC.getSelectedItem().toString().contains("Akimbo")) {
@@ -722,15 +674,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(false);
 					Shotgun_ES_Far.setVisible(false);
 					Shotgun_ES_rays.setVisible(false);
-					Shotgun_ES_Far_Note1.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note3.setVisible(false);
-					Shotgun_ES_Near_Note.setVisible(false);
-					Shotgun_ES_Rays_Note.setVisible(false);
 					Shotgun_DMG_Near.setVisible(false);
 					Shotgun_DMG_Far.setVisible(false);
 					Shotgun_Rays.setVisible(false);
+					ShotgunRangeExplination.setVisible(false);
 					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Assault Rifle")) {
 					WCB_Akimbo.setVisible(false);
@@ -750,15 +697,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(false);
 					Shotgun_ES_Far.setVisible(false);
 					Shotgun_ES_rays.setVisible(false);
-					Shotgun_ES_Far_Note1.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note3.setVisible(false);
-					Shotgun_ES_Near_Note.setVisible(false);
-					Shotgun_ES_Rays_Note.setVisible(false);
 					Shotgun_DMG_Near.setVisible(false);
 					Shotgun_DMG_Far.setVisible(false);
 					Shotgun_Rays.setVisible(false);
+					ShotgunRangeExplination.setVisible(false);
 					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Light Machine Gun")) {
 					WCB_Akimbo.setVisible(false);
@@ -778,15 +720,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(false);
 					Shotgun_ES_Far.setVisible(false);
 					Shotgun_ES_rays.setVisible(false);
-					Shotgun_ES_Far_Note1.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note3.setVisible(false);
-					Shotgun_ES_Near_Note.setVisible(false);
-					Shotgun_ES_Rays_Note.setVisible(false);
 					Shotgun_DMG_Near.setVisible(false);
 					Shotgun_DMG_Far.setVisible(false);
 					Shotgun_Rays.setVisible(false);
+					ShotgunRangeExplination.setVisible(false);
 					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Pistol")) {
 					WCB_Akimbo.setVisible(false);
@@ -806,15 +743,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(false);
 					Shotgun_ES_Far.setVisible(false);
 					Shotgun_ES_rays.setVisible(false);
-					Shotgun_ES_Far_Note1.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note3.setVisible(false);
-					Shotgun_ES_Near_Note.setVisible(false);
-					Shotgun_ES_Rays_Note.setVisible(false);
 					Shotgun_DMG_Near.setVisible(false);
 					Shotgun_DMG_Far.setVisible(false);
 					Shotgun_Rays.setVisible(false);
+					ShotgunRangeExplination.setVisible(false);
 					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Shotgun Primary")) {
 					WCB_Akimbo.setVisible(false);
@@ -834,15 +766,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(true);
 					Shotgun_ES_Far.setVisible(true);
 					Shotgun_ES_rays.setVisible(true);
-					Shotgun_ES_Far_Note1.setVisible(true);
-					Shotgun_ES_Far_Note2.setVisible(true);
-					Shotgun_ES_Far_Note2.setVisible(true);
-					Shotgun_ES_Far_Note3.setVisible(true);
-					Shotgun_ES_Near_Note.setVisible(true);
-					Shotgun_ES_Rays_Note.setVisible(true);
 					Shotgun_DMG_Near.setVisible(true);
 					Shotgun_DMG_Far.setVisible(true);
 					Shotgun_Rays.setVisible(true);
+					ShotgunRangeExplination.setVisible(true);
 					// Shotgun Stuff
 				} else if (WC.getSelectedItem().toString().contains("Shotgun Secondary")) {
 					WCB_Akimbo.setVisible(false);
@@ -862,15 +789,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(true);
 					Shotgun_ES_Far.setVisible(true);
 					Shotgun_ES_rays.setVisible(true);
-					Shotgun_ES_Far_Note1.setVisible(true);
-					Shotgun_ES_Far_Note2.setVisible(true);
-					Shotgun_ES_Far_Note2.setVisible(true);
-					Shotgun_ES_Far_Note3.setVisible(true);
-					Shotgun_ES_Near_Note.setVisible(true);
-					Shotgun_ES_Rays_Note.setVisible(true);
 					Shotgun_DMG_Near.setVisible(true);
 					Shotgun_DMG_Far.setVisible(true);
 					Shotgun_Rays.setVisible(true);
+					ShotgunRangeExplination.setVisible(true);
 					// Shotgun Stuff
 				} else if (WC.getSelectedItem().toString().contains("Sniper Rifle")) {
 					WCB_Akimbo.setVisible(false);
@@ -890,15 +812,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(false);
 					Shotgun_ES_Far.setVisible(false);
 					Shotgun_ES_rays.setVisible(false);
-					Shotgun_ES_Far_Note1.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note3.setVisible(false);
-					Shotgun_ES_Near_Note.setVisible(false);
-					Shotgun_ES_Rays_Note.setVisible(false);
 					Shotgun_DMG_Near.setVisible(false);
 					Shotgun_DMG_Far.setVisible(false);
 					Shotgun_Rays.setVisible(false);
+					ShotgunRangeExplination.setVisible(false);
 					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Special Primary")) {
 					WCB_Akimbo.setVisible(false);
@@ -918,15 +835,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(false);
 					Shotgun_ES_Far.setVisible(false);
 					Shotgun_ES_rays.setVisible(false);
-					Shotgun_ES_Far_Note1.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note3.setVisible(false);
-					Shotgun_ES_Near_Note.setVisible(false);
-					Shotgun_ES_Rays_Note.setVisible(false);
 					Shotgun_DMG_Near.setVisible(false);
 					Shotgun_DMG_Far.setVisible(false);
 					Shotgun_Rays.setVisible(false);
+					ShotgunRangeExplination.setVisible(false);
 					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Special Secondary")) {
 					WCB_Akimbo.setVisible(false);
@@ -946,15 +858,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(false);
 					Shotgun_ES_Far.setVisible(false);
 					Shotgun_ES_rays.setVisible(false);
-					Shotgun_ES_Far_Note1.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note3.setVisible(false);
-					Shotgun_ES_Near_Note.setVisible(false);
-					Shotgun_ES_Rays_Note.setVisible(false);
 					Shotgun_DMG_Near.setVisible(false);
 					Shotgun_DMG_Far.setVisible(false);
 					Shotgun_Rays.setVisible(false);
+					ShotgunRangeExplination.setVisible(false);
 					//Shotgun stuff
 				} else if (WC.getSelectedItem().toString().contains("Submachine Gun")) {
 					WCB_Akimbo.setVisible(false);
@@ -974,15 +881,10 @@ public class WRP {
 					Shotgun_ES_Near.setVisible(false);
 					Shotgun_ES_Far.setVisible(false);
 					Shotgun_ES_rays.setVisible(false);
-					Shotgun_ES_Far_Note1.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note2.setVisible(false);
-					Shotgun_ES_Far_Note3.setVisible(false);
-					Shotgun_ES_Near_Note.setVisible(false);
-					Shotgun_ES_Rays_Note.setVisible(false);
 					Shotgun_DMG_Near.setVisible(false);
 					Shotgun_DMG_Far.setVisible(false);
 					Shotgun_Rays.setVisible(false);
+					ShotgunRangeExplination.setVisible(false);
 					//Shotgun stuff
 				}
 			}
