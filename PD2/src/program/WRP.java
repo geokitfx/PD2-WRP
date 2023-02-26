@@ -94,7 +94,9 @@ public class WRP {
 		JLabel Shotgun_ES_Far = new JLabel("Damage Far:");
 		JLabel Shotgun_ES_rays = new JLabel("Rays:");
 		JTextPane ReloadStatExplanation = new JTextPane();
+		ReloadStatExplanation.setEditable(false);
 		JTextPane ShotgunRangeExplination = new JTextPane();
+		ShotgunRangeExplination.setEditable(false);
 		Shotgun_DMG_Near = new JTextField();
 		Shotgun_DMG_Far = new JTextField();
 		Shotgun_Rays = new JTextField();
@@ -645,13 +647,13 @@ public class WRP {
 		FWRP.getContentPane().add(Output);
 		
 		ReloadStatExplanation.setText("Reload stat explanation: you know it's good when an explanation starts with \"because the devs are stupid\". \r\nBut, because the devs are stupid, reload works in a weird way. \r\nIt's split up into two things: the reload timers, which define how much time passes between the press of a button and the refilling of the magazine, and the animation lenght itself, which is not affected by timers. \r\nWhen Overkill introduced speedpull mags, and later decided to rebalance reload times as well, they added a third aspect that tied these two together: the reload stat. \r\nThe reload stat takes the reload timers and the animation lenght and divides them both by the same value, so their speed can be changed. \r\n11 corresponds to a value of 1, meaning both are divided by 1 and essentially unchanged. Values lower than 11 increment this divisor by 0.05, down to the value of 0.5 at 1. \r\nDividing by half is equal to multiplying by 2, so the reload time is doubled. values above 11 increment the divisor by 0.1, up to a value of 2 at 21. \r\nDividing by two halves the reload time. full table below, in case you want to be really precise with how you change the reload times.");
-		ReloadStatExplanation.setBackground(SystemColor.control);
+		ReloadStatExplanation.setBackground(new Color(240, 240, 240));
 		ReloadStatExplanation.setBounds(920, 631, 862, 369);
 		FWRP.getContentPane().add(ReloadStatExplanation);
 		
 		ShotgunRangeExplination.setText("The distance before any falloff is applied, measured in centimeters (100 = 1m). applies ONLY to shotguns. by default the value is 2000 for all shotguns.\r\nThe distance from the point where falloff is applied to the point where the damage is no longer applied. for example, if damage_near is 300 and damage_far is 300,\r\nthen after 3 meters the damage will start falling off, decreasing gradually with distance, and at 6 meters (300+300=600) the hits will no longer register. \r\nApplies ONLY to shotguns. by default the value is 5000 for all shotguns.\r\nThe amount of pellets shot from the gun. each pellet deals full damage, but only one (per enemy) can apply it - so more pellets don't mean more damage, but more chances to hit. applies ONLY to shotguns.");
-		ShotgunRangeExplination.setBackground(SystemColor.menu);
-		ShotgunRangeExplination.setBounds(851, 275, 783, 287);
+		ShotgunRangeExplination.setBackground(new Color(240, 240, 240));
+		ShotgunRangeExplination.setBounds(851, 275, 804, 287);
 		FWRP.getContentPane().add(ShotgunRangeExplination);
 		
 		Change_Weapon_Category.addActionListener(new ActionListener() {
